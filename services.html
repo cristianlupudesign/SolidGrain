@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services — Solid Grain</title>
+<meta name="description" content="Our full range of timber fencing, decking and outdoor work services across London.">
+<meta name="theme-color" content="#000000">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="hdr">
+  <div class="hdr-in">
+    <a href="index.html" class="logo">Solid <span>Grain</span></a>
+    <nav class="nav">
+      <a href="about.html">About</a>
+      <div class="nav-drop">
+        <a href="services.html" class="active">Services</a>
+        <div class="drop-menu">
+          <a href="services/fencing.html">Closeboard Fencing</a>
+          <a href="services/decking.html">Timber Decking</a>
+          <a href="services/structures.html">Garden Structures</a>
+          <a href="services/repairs.html">Repairs &amp; Maintenance</a>
+        </div>
+      </div>
+      <a href="gallery.html">Work</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="commercial.html">Commercial</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html" class="nav-q">Get a Quote</a>
+    </nav>
+    <button class="burger" onclick="toggleMobileNav()" aria-label="Menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</header>
+<nav class="mnav" id="mobileNav">
+  <a href="index.html" onclick="closeMobileNav()">Home</a>
+  <a href="about.html" onclick="closeMobileNav()">About</a>
+  <a href="services.html" onclick="closeMobileNav()">Services</a>
+  <div class="mnav-sub">
+    <a href="services/fencing.html" onclick="closeMobileNav()">Closeboard Fencing</a>
+    <a href="services/decking.html" onclick="closeMobileNav()">Timber Decking</a>
+    <a href="services/structures.html" onclick="closeMobileNav()">Garden Structures</a>
+    <a href="services/repairs.html" onclick="closeMobileNav()">Repairs</a>
+  </div>
+  <a href="gallery.html" onclick="closeMobileNav()">Our Work</a>
+  <a href="pricing.html" onclick="closeMobileNav()">Pricing</a>
+  <a href="commercial.html" onclick="closeMobileNav()">Commercial</a>
+  <a href="reviews.html" onclick="closeMobileNav()">Reviews</a>
+  <a href="areas.html" onclick="closeMobileNav()">Areas</a>
+  <a href="faq.html" onclick="closeMobileNav()">FAQs</a>
+  <a href="blog.html" onclick="closeMobileNav()">Blog</a>
+  <a href="contact.html" onclick="closeMobileNav()">Get a Quote</a>
+</nav>
+
+<section class="page-hero dark">
+  <div class="ctr">
+    <div class="sn">What We Do</div>
+    <h1 class="sh" style="font-size:clamp(40px,6vw,72px)">Our <em>services.</em></h1>
+    <p class="s-intro">Everything timber, outdoors, built properly. From a single fence panel to a full commercial site boundary.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="ctr">
+    <div class="grid-2" style="gap:0">
+      <a href="services/fencing.html" class="card rv" style="border-right:0">
+        <div class="card-img" style="height:300px"><img src="https://images.unsplash.com/photo-1594897030264-ab7d87efc473?w=700&h=450&fit=crop" alt="Closeboard fencing"></div>
+        <div class="card-body"><div class="card-tag">01 — Core Service</div><div class="card-title">Closeboard Fencing</div><p class="card-text">Supply and install closeboard timber fencing — the strongest, longest-lasting fence type. New installations, replacements, concrete or timber posts, standard and bespoke gates.</p><span class="card-link">View service <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span></div>
+      </a>
+      <a href="services/decking.html" class="card rv">
+        <div class="card-img" style="height:300px"><img src="https://images.unsplash.com/photo-1591825729269-caeb344f6df2?w=700&h=450&fit=crop" alt="Timber decking"></div>
+        <div class="card-body"><div class="card-tag">02</div><div class="card-title">Timber Decking</div><p class="card-text">Pressure-treated timber decking. Ground-level and raised decks, steps, balustrades and handrails. New builds, replacements and extensions.</p><span class="card-link">View service <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span></div>
+      </a>
+      <a href="services/structures.html" class="card rv" style="border-right:0;border-top:0">
+        <div class="card-img" style="height:300px"><img src="https://images.unsplash.com/photo-1598902108854-d1446677672c?w=700&h=450&fit=crop" alt="Garden structures"></div>
+        <div class="card-body"><div class="card-tag">03</div><div class="card-title">Garden Structures</div><p class="card-text">Sheds, pergolas, trellis, screening panels and sleeper raised beds. Built on site to your specification.</p><span class="card-link">View service <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span></div>
+      </a>
+      <a href="services/repairs.html" class="card rv" style="border-top:0">
+        <div class="card-img" style="height:300px"><img src="https://images.unsplash.com/photo-1504148455328-c376907d081c?w=700&h=450&fit=crop" alt="Repairs"></div>
+        <div class="card-body"><div class="card-tag">04</div><div class="card-title">Repairs &amp; Maintenance</div><p class="card-text">Storm damage, post replacements and emergency call-outs. Quick turnaround, fair pricing.</p><span class="card-link">View service <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="cta-band">
+  <h2>Ready to get <em>started?</em></h2>
+  <p>Tell us what you need. Free quote, same-day response, no obligation.</p>
+  <div class="btn-group">
+    <a href="contact.html" class="btn-b">Get a Free Quote <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></a>
+    <a href="tel:08000000000" class="btn-o" style="color:var(--white);border-color:var(--g3)">Call Us</a>
+  </div>
+</div>
+<footer class="ftr">
+  <div class="ctr">
+    <div class="ftr-grid">
+      <div>
+        <div class="ftr-b">Solid <span>Grain</span></div>
+        <p class="ftr-desc">London timber fencing contractor. Closeboard fencing, decking and garden structures. Built solid, built to last.</p>
+        <div class="ftr-reg">Solid Grain &middot; Registered in England &amp; Wales</div>
+      </div>
+      <div>
+        <div class="ftr-col-t">Services</div>
+        <ul class="ftr-links">
+          <li><a href="services/fencing.html">Closeboard Fencing</a></li>
+          <li><a href="services/decking.html">Timber Decking</a></li>
+          <li><a href="services/structures.html">Garden Structures</a></li>
+          <li><a href="services/repairs.html">Repairs</a></li>
+          <li><a href="commercial.html">Commercial Work</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="ftr-col-t">Company</div>
+        <ul class="ftr-links">
+          <li><a href="about.html">Our Mission</a></li>
+          <li><a href="gallery.html">Our Work</a>
+  <a href="pricing.html" onclick="closeMobileNav()">Pricing</a></li>
+          <li><a href="reviews.html">Reviews</a></li>
+          <li><a href="areas.html">Areas Covered</a></li>
+          <li><a href="faq.html">FAQs</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="ftr-col-t">Contact</div>
+        <ul class="ftr-links">
+          <li><a href="tel:08000000000">0800 000 0000</a></li>
+          <li><a href="mailto:hello@solidgrain.co.uk">hello@solidgrain.co.uk</a></li>
+          <li><a href="#">WhatsApp Us</a></li>
+        </ul>
+        <div style="margin-top:14px;font-size:11px;color:var(--g5)">Mon–Fri 7am–6pm<br>Sat 8am–4pm</div>
+      </div>
+    </div>
+    <div class="ftr-bot">
+      <div class="ftr-cp">&copy; 2025 Solid Grain. All rights reserved.</div>
+      <div class="ftr-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms &amp; Conditions</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

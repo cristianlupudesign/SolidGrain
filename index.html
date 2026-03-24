@@ -3,196 +3,35 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Solid Grain — London Timber Fencing & Outdoor Work</title>
+<title>Home — Solid Grain</title>
 <meta name="description" content="Solid Grain — closeboard fencing, timber decking and garden structures across London. Quality timber, clean finish, no shortcuts.">
 <meta name="theme-color" content="#000000">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{--black:#000;--white:#FFF;--red:#D14836;--g3:#333;--g4:#666;--g5:#999;--g6:#E5E5E5;--g7:#F5F5F5;--font:'Instrument Sans',sans-serif;--mw:1320px;--hh:60px}
-html{scroll-behavior:smooth}
-body{font-family:var(--font);font-weight:400;color:var(--black);background:var(--white);line-height:1.55;-webkit-font-smoothing:antialiased}
-a{color:inherit;text-decoration:none}ul{list-style:none}img{max-width:100%;display:block}
-.ctr{max-width:var(--mw);margin:0 auto;padding:0 32px}
-::selection{background:var(--red);color:var(--white)}
-
-/* HEADER */
-.hdr{position:fixed;top:0;left:0;right:0;z-index:1000;height:var(--hh);background:var(--white);border-bottom:1px solid var(--black)}
-.hdr-in{max-width:var(--mw);margin:0 auto;padding:0 32px;height:100%;display:flex;align-items:center;justify-content:space-between}
-.logo{font-size:15px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}.logo span{color:var(--red)}
-.nav{display:flex;align-items:center;gap:28px}
-.nav a{font-size:13px;font-weight:500;letter-spacing:.04em;color:var(--g4);transition:color .2s}.nav a:hover{color:var(--black)}
-.nav-q{color:var(--white)!important;background:var(--black);padding:8px 20px;font-weight:600;transition:background .2s}.nav-q:hover{background:var(--red)}
-.burger{display:none;background:0 0;border:0;cursor:pointer;padding:6px}.burger svg{display:block}
-.mnav{display:none;position:fixed;top:var(--hh);left:0;right:0;bottom:0;background:var(--white);z-index:999;padding:40px 32px;border-top:1px solid var(--black)}
-.mnav.open{display:flex;flex-direction:column}
-.mnav a{font-size:32px;font-weight:700;letter-spacing:-.02em;padding:16px 0;border-bottom:1px solid var(--g6);color:var(--black)}.mnav a:last-child{border-bottom:0}.mnav a:hover{color:var(--red)}
-@media(max-width:768px){.nav{display:none}.burger{display:block}}
-
-/* HERO */
-.hero{padding-top:var(--hh);display:grid;grid-template-columns:1fr 1fr;min-height:100vh;border-bottom:1px solid var(--black)}
-@media(max-width:768px){.hero{grid-template-columns:1fr;min-height:auto}}
-.hero-left{display:flex;flex-direction:column;justify-content:flex-end;padding:60px 48px 80px}
-.hero-lab{font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-bottom:32px;display:flex;align-items:center;gap:12px}
-.hero-lab::before{content:'';width:32px;height:1px;background:var(--red)}
-.hero-t{font-size:clamp(48px,7vw,96px);font-weight:700;line-height:.88;letter-spacing:-.04em}
-.hero-t em{font-style:normal;color:var(--red)}
-.hero-d{font-size:16px;color:var(--g4);max-width:380px;line-height:1.65;margin-top:28px}
-.hero-acts{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap}
-.btn-b{display:inline-flex;align-items:center;gap:10px;font-size:14px;font-weight:600;letter-spacing:.04em;color:var(--white);background:var(--black);padding:14px 32px;transition:background .2s;border:0;cursor:pointer;font-family:var(--font)}.btn-b:hover{background:var(--red)}
-.btn-b svg{transition:transform .2s}.btn-b:hover svg{transform:translateX(4px)}
-.btn-o{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;letter-spacing:.04em;color:var(--black);background:0 0;padding:14px 28px;border:1px solid var(--black);transition:all .2s;cursor:pointer;font-family:var(--font)}.btn-o:hover{background:var(--black);color:var(--white)}
-.hero-trust{display:flex;gap:24px;margin-top:40px;flex-wrap:wrap}
-.trust-i{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--g5);display:flex;align-items:center;gap:6px}
-.trust-i::before{content:'';width:6px;height:6px;background:var(--red);border-radius:50%}
-.hero-img{position:relative;overflow:hidden;border-left:1px solid var(--black);min-height:500px}
-@media(max-width:768px){.hero-img{min-height:400px;border-left:0;border-top:1px solid var(--black)}}
-.hero-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-
-/* TICKER */
-.tick{background:var(--black);overflow:hidden;padding:14px 0;border-bottom:1px solid var(--g3)}
-.tick-tr{display:flex;animation:scr 20s linear infinite;width:max-content}
-.tick-i{font-size:13px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--white);white-space:nowrap;padding:0 32px}
-.tick-d{color:var(--red);padding:0 8px}
-@keyframes scr{from{transform:translateX(0)}to{transform:translateX(-33.333%)}}
-
-/* SECTION GLOBALS */
-.sn{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--g5);margin-bottom:12px}
-.sh{font-size:clamp(36px,5vw,64px);font-weight:700;line-height:.95;letter-spacing:-.03em;margin-bottom:24px}.sh em{font-style:normal;color:var(--red)}
-
-/* SERVICES — image cards */
-.svc{padding:120px 0 80px;border-bottom:1px solid var(--black)}
-.svc-intro{font-size:16px;color:var(--g4);max-width:500px;line-height:1.65;margin-bottom:60px}
-.svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:0}
-@media(max-width:768px){.svc-grid{grid-template-columns:1fr}}
-.svc-card{border:1px solid var(--g6);border-top:0;border-left:0;display:flex;flex-direction:column}
-.svc-grid .svc-card:nth-child(odd){border-left:0}
-.svc-grid .svc-card:nth-child(1),.svc-grid .svc-card:nth-child(2){border-top:1px solid var(--black)}
-@media(max-width:768px){.svc-card{border-left:0!important}.svc-grid .svc-card:nth-child(2){border-top:0}}
-.svc-img{height:320px;overflow:hidden;position:relative;background:var(--g7)}
-.svc-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}.svc-card:hover .svc-img img{transform:scale(1.04)}
-.svc-body{padding:32px 28px 36px;flex:1}
-.svc-num{font-size:11px;font-weight:600;letter-spacing:.15em;color:var(--red);margin-bottom:8px}
-.svc-name{font-size:24px;font-weight:700;letter-spacing:-.02em;line-height:1.1;margin-bottom:10px}
-.svc-desc{font-size:14px;color:var(--g4);line-height:1.65;margin-bottom:16px}
-.svc-tags{display:flex;flex-wrap:wrap;gap:6px}
-.svc-tag{font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border:1px solid var(--g6);color:var(--g4)}
-
-/* FULL-BLEED IMAGE BAND */
-.img-band{height:60vh;min-height:400px;max-height:600px;overflow:hidden;position:relative;border-bottom:1px solid var(--black)}
-.img-band img{width:100%;height:100%;object-fit:cover}
-.img-band-overlay{position:absolute;inset:0;background:rgba(0,0,0,.35);display:flex;align-items:center;justify-content:center}
-.img-band-text{color:var(--white);text-align:center;padding:20px}
-.img-band-text h2{font-size:clamp(32px,5vw,60px);font-weight:700;line-height:.95;letter-spacing:-.03em}
-.img-band-text h2 em{font-style:normal;color:var(--red)}
-.img-band-text p{font-size:15px;color:rgba(255,255,255,.7);margin-top:16px;max-width:400px;margin-left:auto;margin-right:auto;line-height:1.6}
-
-/* GALLERY GRID */
-.gallery{border-bottom:1px solid var(--black)}
-.gal-grid{display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:320px 320px}
-@media(max-width:768px){.gal-grid{grid-template-columns:1fr 1fr;grid-template-rows:240px 240px 240px}}
-@media(max-width:480px){.gal-grid{grid-template-columns:1fr;grid-template-rows:repeat(6,240px)}}
-.gal-cell{overflow:hidden;position:relative;border-right:1px solid rgba(255,255,255,.1);border-bottom:1px solid rgba(255,255,255,.1)}
-.gal-cell img{width:100%;height:100%;object-fit:cover;transition:transform .5s}.gal-cell:hover img{transform:scale(1.05)}
-.gal-cell.span-2{grid-row:span 2}
-.gal-label{position:absolute;bottom:16px;left:16px;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--white);background:rgba(0,0,0,.65);padding:5px 12px;backdrop-filter:blur(4px)}
-
-/* WHY */
-.why{display:grid;grid-template-columns:1fr 1fr;min-height:600px;border-bottom:1px solid var(--black)}
-@media(max-width:768px){.why{grid-template-columns:1fr}}
-.why-l{background:var(--black);padding:80px 48px;display:flex;flex-direction:column;justify-content:center}
-.why-l .sn{color:var(--g4)}
-.why-q{font-size:clamp(28px,3.5vw,44px);font-weight:700;line-height:1.1;letter-spacing:-.02em;color:var(--white);margin-bottom:32px}.why-q em{font-style:normal;color:var(--red)}
-.why-at{font-size:13px;font-weight:500;color:var(--g4);letter-spacing:.04em;line-height:1.6}
-.why-r{background:var(--white);padding:80px 48px;display:flex;flex-direction:column;justify-content:center;gap:36px}
-.why-i{display:flex;gap:20px;align-items:flex-start}
-.why-mk{width:28px;height:2px;background:var(--red);margin-top:10px;flex-shrink:0}
-.why-it{font-size:16px;font-weight:700;letter-spacing:-.01em;margin-bottom:4px}
-.why-tx{font-size:14px;color:var(--g4);line-height:1.6}
-
-/* PROCESS */
-.prc{padding:120px 0;border-bottom:1px solid var(--black)}
-.prc-g{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:60px}
-@media(max-width:768px){.prc-g{grid-template-columns:1fr 1fr}}
-@media(max-width:480px){.prc-g{grid-template-columns:1fr}}
-.prc-s{padding:40px 28px;border-left:1px solid var(--g6)}.prc-s:first-child{border-left:1px solid var(--black)}
-.prc-nm{font-size:64px;font-weight:700;letter-spacing:-.04em;color:var(--g6);line-height:1;margin-bottom:20px}.prc-s:hover .prc-nm{color:var(--red)}
-.prc-ti{font-size:18px;font-weight:700;letter-spacing:-.01em;margin-bottom:8px}
-.prc-tx{font-size:14px;color:var(--g4);line-height:1.6}
-
-/* REVIEWS */
-.rev{padding:120px 0;background:var(--g7);border-bottom:1px solid var(--black)}
-.rev-g{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:60px}
-@media(max-width:768px){.rev-g{grid-template-columns:1fr}}
-.rev-c{padding:40px 32px;border-left:1px solid var(--g6)}.rev-c:first-child{border-left:1px solid var(--black)}
-.rev-st{font-size:14px;color:var(--red);letter-spacing:2px;margin-bottom:20px}
-.rev-tx{font-size:16px;line-height:1.65;margin-bottom:24px;font-style:italic}
-.rev-au{font-size:13px;font-weight:700;letter-spacing:.04em}
-.rev-lo{font-size:12px;color:var(--g5);margin-top:2px}
-
-/* AREAS */
-.areas{padding:100px 0;border-bottom:1px solid var(--black)}
-.areas-top{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
-@media(max-width:768px){.areas-top{grid-template-columns:1fr;gap:24px}}
-.areas-d{font-size:15px;color:var(--g4);line-height:1.65;padding-top:12px}
-.areas-l{display:flex;flex-wrap:wrap;gap:8px;margin-top:48px}
-.area-t{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:8px 16px;border:1px solid var(--g6);color:var(--g4);transition:all .2s}
-.area-t:hover{border-color:var(--black);color:var(--black);background:var(--g7)}
-
-/* CONTACT */
-.cnt{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--black)}
-@media(max-width:768px){.cnt{grid-template-columns:1fr}}
-.cnt-l{background:var(--black);padding:80px 48px;display:flex;flex-direction:column;justify-content:space-between;min-height:600px}
-.cnt-h{font-size:clamp(40px,5vw,72px);font-weight:700;line-height:.92;letter-spacing:-.03em;color:var(--white)}.cnt-h em{font-style:normal;color:var(--red)}
-.cnt-d{font-size:15px;color:var(--g4);line-height:1.65;margin-top:24px;max-width:360px}
-.cnt-dets{margin-top:auto;padding-top:60px}
-.cnt-det{padding:16px 0;border-top:1px solid var(--g3)}
-.cnt-dl{font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--g5);margin-bottom:4px}
-.cnt-dv{font-size:16px;font-weight:600;color:var(--white)}.cnt-dv a{color:var(--white);transition:color .2s}.cnt-dv a:hover{color:var(--red)}
-.cnt-r{background:var(--white);padding:80px 48px;display:flex;flex-direction:column;justify-content:center}
-.fh{font-size:24px;font-weight:700;letter-spacing:-.02em;margin-bottom:8px}
-.fsb{font-size:14px;color:var(--g4);margin-bottom:36px}
-.fr{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
-@media(max-width:480px){.fr{grid-template-columns:1fr}}
-.fg{margin-bottom:16px}
-.fl{display:block;font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--g5);margin-bottom:6px}
-.fi,.fsel,.fta{width:100%;padding:12px 0;background:0 0;border:0;border-bottom:1px solid var(--g6);color:var(--black);font-family:var(--font);font-size:15px;font-weight:500;outline:0;transition:border-color .2s;border-radius:0;-webkit-appearance:none}
-.fi:focus,.fsel:focus,.fta:focus{border-color:var(--black)}
-.fta{min-height:80px;resize:vertical;border:1px solid var(--g6);padding:12px;margin-top:4px}.fta:focus{border-color:var(--black)}
-.fsel{cursor:pointer;color:var(--g4)}
-.fbtn{width:100%;padding:16px;background:var(--black);color:var(--white);font-family:var(--font);font-size:14px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;border:0;cursor:pointer;transition:background .2s;margin-top:8px}.fbtn:hover{background:var(--red)}
-.fnote{font-size:12px;color:var(--g5);margin-top:12px}
-
-/* FOOTER */
-.ftr{background:var(--white);padding:40px 0;border-top:1px solid var(--black)}
-.ftr-in{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:32px}
-.ftr-b{font-size:15px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}.ftr-b span{color:var(--red)}
-.ftr-reg{font-size:12px;color:var(--g5);margin-top:8px;font-weight:400;letter-spacing:0;text-transform:none}
-.ftr-lk{display:flex;gap:24px}.ftr-lk a{font-size:13px;color:var(--g4);transition:color .2s}.ftr-lk a:hover{color:var(--black)}
-.ftr-cp{font-size:12px;color:var(--g5);width:100%;padding-top:32px;border-top:1px solid var(--g6);margin-top:8px}
-
-/* IMAGE PLACEHOLDERS */
-.img-ph{background:var(--g7);display:flex;align-items:center;justify-content:center;color:var(--g5);font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
-
-/* REVEAL */
-.rv{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}.rv.vis{opacity:1;transform:translateY(0)}
-</style>
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-<!-- HEADER -->
 <header class="hdr">
   <div class="hdr-in">
-    <a href="#" class="logo">Solid <span>Grain</span></a>
+    <a href="index.html" class="logo">Solid <span>Grain</span></a>
     <nav class="nav">
-      <a href="#services">Services</a>
-      <a href="#gallery">Work</a>
-      <a href="#why">About</a>
-      <a href="#process">Process</a>
-      <a href="#reviews">Reviews</a>
-      <a href="#contact" class="nav-q">Get a Quote</a>
+      <a href="about.html">About</a>
+      <div class="nav-drop">
+        <a href="services.html">Services</a>
+        <div class="drop-menu">
+          <a href="services/fencing.html">Closeboard Fencing</a>
+          <a href="services/decking.html">Timber Decking</a>
+          <a href="services/structures.html">Garden Structures</a>
+          <a href="services/repairs.html">Repairs &amp; Maintenance</a>
+        </div>
+      </div>
+      <a href="gallery.html">Work</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="commercial.html">Commercial</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html" class="nav-q">Get a Quote</a>
     </nav>
     <button class="burger" onclick="toggleMobileNav()" aria-label="Menu">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
@@ -200,272 +39,187 @@ a{color:inherit;text-decoration:none}ul{list-style:none}img{max-width:100%;displ
   </div>
 </header>
 <nav class="mnav" id="mobileNav">
-  <a href="#services" onclick="closeMobileNav()">Services</a>
-  <a href="#gallery" onclick="closeMobileNav()">Work</a>
-  <a href="#why" onclick="closeMobileNav()">About</a>
-  <a href="#process" onclick="closeMobileNav()">Process</a>
-  <a href="#reviews" onclick="closeMobileNav()">Reviews</a>
-  <a href="#contact" onclick="closeMobileNav()">Get a Quote</a>
+  <a href="index.html" onclick="closeMobileNav()">Home</a>
+  <a href="about.html" onclick="closeMobileNav()">About</a>
+  <a href="services.html" onclick="closeMobileNav()">Services</a>
+  <div class="mnav-sub">
+    <a href="services/fencing.html" onclick="closeMobileNav()">Closeboard Fencing</a>
+    <a href="services/decking.html" onclick="closeMobileNav()">Timber Decking</a>
+    <a href="services/structures.html" onclick="closeMobileNav()">Garden Structures</a>
+    <a href="services/repairs.html" onclick="closeMobileNav()">Repairs</a>
+  </div>
+  <a href="gallery.html" onclick="closeMobileNav()">Our Work</a>
+  <a href="pricing.html" onclick="closeMobileNav()">Pricing</a>
+  <a href="commercial.html" onclick="closeMobileNav()">Commercial</a>
+  <a href="reviews.html" onclick="closeMobileNav()">Reviews</a>
+  <a href="areas.html" onclick="closeMobileNav()">Areas</a>
+  <a href="faq.html" onclick="closeMobileNav()">FAQs</a>
+  <a href="blog.html" onclick="closeMobileNav()">Blog</a>
+  <a href="contact.html" onclick="closeMobileNav()">Get a Quote</a>
 </nav>
 
-<!-- HERO — split: text left, image right -->
-<section class="hero">
-  <div class="hero-left">
-    <div>
-      <div class="hero-lab">London Timber Contractor</div>
-      <h1 class="hero-t">Built<br>solid, built<br>to <em>last.</em></h1>
-      <p class="hero-d">Closeboard fencing, timber decking and garden structures across London. Quality timber, clean finish, no shortcuts.</p>
-      <div class="hero-acts">
-        <a href="#contact" class="btn-b">Get a Free Quote <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></a>
-        <a href="#services" class="btn-o">Our Services</a>
-      </div>
-      <div class="hero-trust">
-        <span class="trust-i">Fully Insured</span>
-        <span class="trust-i">Free Quotes</span>
-        <span class="trust-i">Same-Day Response</span>
-      </div>
+<section class="page-hero-split" style="border-bottom:1px solid var(--black)">
+  <div class="ph-text">
+    <div style="font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-bottom:32px;display:flex;align-items:center;gap:12px"><span style="width:32px;height:1px;background:var(--red);display:inline-block"></span>London Timber Contractor</div>
+    <h1 style="font-size:clamp(48px,7vw,96px);font-weight:700;line-height:.88;letter-spacing:-.04em">Built<br>solid, built<br>to <em style="font-style:normal;color:var(--red)">last.</em></h1>
+    <p style="font-size:16px;color:var(--g4);max-width:380px;line-height:1.65;margin-top:28px">Closeboard fencing, timber decking and garden structures across London. Quality timber, clean finish, no shortcuts.</p>
+    <div style="display:flex;gap:12px;margin-top:32px;flex-wrap:wrap">
+      <a href="contact.html" class="btn-b">Get a Free Quote <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></a>
+      <a href="services.html" class="btn-o">Our Services</a>
+    </div>
+    <div style="display:flex;gap:24px;margin-top:40px;flex-wrap:wrap">
+      <span style="font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--g5);display:flex;align-items:center;gap:6px"><span style="width:6px;height:6px;background:var(--red);border-radius:50%;display:inline-block"></span>Fully Insured</span>
+      <span style="font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--g5);display:flex;align-items:center;gap:6px"><span style="width:6px;height:6px;background:var(--red);border-radius:50%;display:inline-block"></span>Free Quotes</span>
+      <span style="font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--g5);display:flex;align-items:center;gap:6px"><span style="width:6px;height:6px;background:var(--red);border-radius:50%;display:inline-block"></span>Same-Day Response</span>
     </div>
   </div>
-  <div class="hero-img">
-    <!-- REPLACE: Add your own hero image here -->
-    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=900&h=1200&fit=crop&crop=center" alt="Timber fence close-up showing wood grain detail">
+  <div class="ph-img">
+    <!-- REPLACE: Your hero image -->
+    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=900&h=1200&fit=crop" alt="Timber fence detail">
   </div>
 </section>
 
-<!-- TICKER -->
-<div class="tick">
-  <div class="tick-tr">
-    <span class="tick-i">Closeboard Fencing <span class="tick-d">·</span> Timber Decking <span class="tick-d">·</span> Garden Structures <span class="tick-d">·</span> Gates <span class="tick-d">·</span> Repairs <span class="tick-d">·</span> Fully Insured <span class="tick-d">·</span> Free Quotes <span class="tick-d">·</span> Same-Day Response <span class="tick-d">·</span>&nbsp;</span>
-    <span class="tick-i">Closeboard Fencing <span class="tick-d">·</span> Timber Decking <span class="tick-d">·</span> Garden Structures <span class="tick-d">·</span> Gates <span class="tick-d">·</span> Repairs <span class="tick-d">·</span> Fully Insured <span class="tick-d">·</span> Free Quotes <span class="tick-d">·</span> Same-Day Response <span class="tick-d">·</span>&nbsp;</span>
-    <span class="tick-i">Closeboard Fencing <span class="tick-d">·</span> Timber Decking <span class="tick-d">·</span> Garden Structures <span class="tick-d">·</span> Gates <span class="tick-d">·</span> Repairs <span class="tick-d">·</span> Fully Insured <span class="tick-d">·</span> Free Quotes <span class="tick-d">·</span> Same-Day Response <span class="tick-d">·</span>&nbsp;</span>
-  </div>
-</div>
+<div class="tick"><div class="tick-tr">
+  <span class="tick-i">Closeboard Fencing <span class="tick-d">&middot;</span> Timber Decking <span class="tick-d">&middot;</span> Garden Structures <span class="tick-d">&middot;</span> Gates <span class="tick-d">&middot;</span> Repairs <span class="tick-d">&middot;</span> Fully Insured <span class="tick-d">&middot;</span> Free Quotes <span class="tick-d">&middot;</span> Same-Day Response <span class="tick-d">&middot;</span>&nbsp;</span>
+  <span class="tick-i">Closeboard Fencing <span class="tick-d">&middot;</span> Timber Decking <span class="tick-d">&middot;</span> Garden Structures <span class="tick-d">&middot;</span> Gates <span class="tick-d">&middot;</span> Repairs <span class="tick-d">&middot;</span> Fully Insured <span class="tick-d">&middot;</span> Free Quotes <span class="tick-d">&middot;</span> Same-Day Response <span class="tick-d">&middot;</span>&nbsp;</span>
+  <span class="tick-i">Closeboard Fencing <span class="tick-d">&middot;</span> Timber Decking <span class="tick-d">&middot;</span> Garden Structures <span class="tick-d">&middot;</span> Gates <span class="tick-d">&middot;</span> Repairs <span class="tick-d">&middot;</span> Fully Insured <span class="tick-d">&middot;</span> Free Quotes <span class="tick-d">&middot;</span> Same-Day Response <span class="tick-d">&middot;</span>&nbsp;</span>
+</div></div>
 
-<!-- SERVICES — with images -->
-<section class="svc" id="services">
+<section class="section">
   <div class="ctr">
-    <div class="sn rv">01 — Services</div>
+    <div class="sn rv">Services</div>
     <h2 class="sh rv">What we <em>do.</em></h2>
-    <p class="svc-intro rv">Everything timber, outdoors, built properly. From a single fence panel to a full garden transformation.</p>
-  </div>
-  <div class="ctr">
-    <div class="svc-grid">
-      <!-- 1: Closeboard Fencing -->
-      <div class="svc-card rv">
-        <div class="svc-img">
-          <!-- REPLACE: Your closeboard fencing photo -->
-          <img src="https://images.unsplash.com/photo-1594897030264-ab7d87efc473?w=700&h=450&fit=crop" alt="Closeboard timber fencing">
-        </div>
-        <div class="svc-body">
-          <div class="svc-num">01</div>
-          <div class="svc-name">Closeboard Fencing</div>
-          <p class="svc-desc">Supply and install closeboard timber fencing — the strongest, longest-lasting fence type. New installations, storm damage replacement, concrete or timber posts.</p>
-          <div class="svc-tags"><span class="svc-tag">New Installations</span><span class="svc-tag">Replacements</span><span class="svc-tag">Concrete Posts</span><span class="svc-tag">Gates</span></div>
-        </div>
-      </div>
-      <!-- 2: Timber Decking -->
-      <div class="svc-card rv">
-        <div class="svc-img">
-          <!-- REPLACE: Your decking photo -->
-          <img src="https://images.unsplash.com/photo-1591825729269-caeb344f6df2?w=700&h=450&fit=crop" alt="Timber decking installation">
-        </div>
-        <div class="svc-body">
-          <div class="svc-num">02</div>
-          <div class="svc-name">Timber Decking</div>
-          <p class="svc-desc">Pressure-treated timber decking, built to last. Ground-level and raised decks, steps, balustrades and handrails.</p>
-          <div class="svc-tags"><span class="svc-tag">New Decks</span><span class="svc-tag">Steps & Rails</span><span class="svc-tag">Repairs</span><span class="svc-tag">Restaining</span></div>
-        </div>
-      </div>
-      <!-- 3: Garden Structures -->
-      <div class="svc-card rv">
-        <div class="svc-img">
-          <!-- REPLACE: Your pergola/shed photo -->
-          <img src="https://images.unsplash.com/photo-1598902108854-d1446677672c?w=700&h=450&fit=crop" alt="Garden pergola timber structure">
-        </div>
-        <div class="svc-body">
-          <div class="svc-num">03</div>
-          <div class="svc-name">Garden Structures</div>
-          <p class="svc-desc">Sheds, pergolas, trellis, screening panels and sleeper raised beds. Built on site to your spec.</p>
-          <div class="svc-tags"><span class="svc-tag">Sheds</span><span class="svc-tag">Pergolas</span><span class="svc-tag">Trellis</span><span class="svc-tag">Raised Beds</span></div>
-        </div>
-      </div>
-      <!-- 4: Repairs -->
-      <div class="svc-card rv">
-        <div class="svc-img">
-          <!-- REPLACE: Your repair/tools photo -->
-          <img src="https://images.unsplash.com/photo-1504148455328-c376907d081c?w=700&h=450&fit=crop" alt="Timber repair and maintenance tools">
-        </div>
-        <div class="svc-body">
-          <div class="svc-num">04</div>
-          <div class="svc-name">Repairs & Maintenance</div>
-          <p class="svc-desc">Storm damage, post replacements and emergency call-outs. Quick turnaround, fair pricing.</p>
-          <div class="svc-tags"><span class="svc-tag">Storm Damage</span><span class="svc-tag">Post Replacement</span><span class="svc-tag">Emergency</span></div>
-        </div>
-      </div>
+    <p class="s-intro rv" style="margin-bottom:48px">Everything timber, outdoors, built properly.</p>
+    <div class="grid-4">
+      <a href="services/fencing.html" class="card rv">
+        <div class="card-img"><img src="https://images.unsplash.com/photo-1594897030264-ab7d87efc473?w=600&h=400&fit=crop" alt="Closeboard fencing"></div>
+        <div class="card-body"><div class="card-tag">01</div><div class="card-title">Closeboard Fencing</div><p class="card-text">The strongest, longest-lasting fence type. New installs and replacements.</p><span class="card-link">Learn more <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span></div>
+      </a>
+      <a href="services/decking.html" class="card rv">
+        <div class="card-img"><img src="https://images.unsplash.com/photo-1591825729269-caeb344f6df2?w=600&h=400&fit=crop" alt="Timber decking"></div>
+        <div class="card-body"><div class="card-tag">02</div><div class="card-title">Timber Decking</div><p class="card-text">Pressure-treated decking. Ground-level, raised, steps and balustrades.</p><span class="card-link">Learn more <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span></div>
+      </a>
+      <a href="services/structures.html" class="card rv">
+        <div class="card-img"><img src="https://images.unsplash.com/photo-1598902108854-d1446677672c?w=600&h=400&fit=crop" alt="Garden structures"></div>
+        <div class="card-body"><div class="card-tag">03</div><div class="card-title">Garden Structures</div><p class="card-text">Sheds, pergolas, trellis and raised beds. Built on site to your spec.</p><span class="card-link">Learn more <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span></div>
+      </a>
+      <a href="services/repairs.html" class="card rv">
+        <div class="card-img"><img src="https://images.unsplash.com/photo-1504148455328-c376907d081c?w=600&h=400&fit=crop" alt="Repairs"></div>
+        <div class="card-body"><div class="card-tag">04</div><div class="card-title">Repairs</div><p class="card-text">Storm damage, post replacements and emergency call-outs.</p><span class="card-link">Learn more <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span></div>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- FULL-BLEED IMAGE BAND -->
 <div class="img-band">
-  <!-- REPLACE: Your best full-width job photo -->
-  <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1600&h=700&fit=crop" alt="Completed garden fencing and landscaping work">
-  <div class="img-band-overlay">
-    <div class="img-band-text">
-      <h2>Quality timber.<br><em>No shortcuts.</em></h2>
-      <p>Pressure-treated on every job. It resists rot, lasts longer and looks better.</p>
-    </div>
+  <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1600&h=700&fit=crop" alt="Garden with timber fencing">
+  <div class="img-band-ov"><div class="img-band-tx"><h2>Quality timber.<br><em>No shortcuts.</em></h2><p>Pressure-treated on every job. It resists rot, lasts longer and looks better.</p></div></div>
+</div>
+
+<div class="split">
+  <div class="split-dark">
+    <div class="sn">About</div>
+    <h2 style="font-size:clamp(28px,3.5vw,44px);font-weight:700;line-height:1.1;letter-spacing:-.02em;color:var(--white);margin-bottom:28px" class="rv">Every job gets the same attention — whether it's <em style="font-style:normal;color:var(--red)">3 panels or 300.</em></h2>
+    <p style="font-size:13px;color:var(--g4);line-height:1.6">We're a small team and we intend to keep it that way. Every job is done by people who care about the work.</p>
+    <div style="margin-top:28px"><a href="about.html" class="btn-b">Our Mission <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></a></div>
+  </div>
+  <div class="split-light" style="gap:32px">
+    <div class="why-i rv"><div class="why-mk"></div><div><div class="why-it">Fully Insured</div><div class="why-tx">&pound;2 million public liability on every job.</div></div></div>
+    <div class="why-i rv"><div class="why-mk"></div><div><div class="why-it">Free Same-Day Quotes</div><div class="why-tx">No obligation, no hard sell. We respond the same day.</div></div></div>
+    <div class="why-i rv"><div class="why-mk"></div><div><div class="why-it">Quality Timber Only</div><div class="why-tx">Pressure-treated on every job. No cheap materials.</div></div></div>
+    <div class="why-i rv"><div class="why-mk"></div><div><div class="why-it">We Clean Up</div><div class="why-tx">All old timber removed. You just see the finished job.</div></div></div>
   </div>
 </div>
 
-<!-- GALLERY GRID -->
-<section class="gallery" id="gallery">
-  <div class="gal-grid">
-    <!-- REPLACE: All six images with your actual job photos -->
-    <div class="gal-cell span-2 rv">
-      <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&h=800&fit=crop" alt="Timber fence panels close-up">
-      <span class="gal-label">Closeboard Fencing</span>
-    </div>
-    <div class="gal-cell rv">
-      <img src="https://images.unsplash.com/photo-1591825729269-caeb344f6df2?w=600&h=400&fit=crop" alt="Garden decking completed">
-      <span class="gal-label">Timber Decking</span>
-    </div>
-    <div class="gal-cell rv">
-      <img src="https://images.unsplash.com/photo-1598902108854-d1446677672c?w=600&h=400&fit=crop" alt="Timber pergola garden">
-      <span class="gal-label">Garden Pergola</span>
-    </div>
-    <div class="gal-cell rv">
-      <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&h=400&fit=crop" alt="Garden landscaping with timber">
-      <span class="gal-label">Garden Transformation</span>
-    </div>
-    <div class="gal-cell rv">
-      <img src="https://images.unsplash.com/photo-1504148455328-c376907d081c?w=600&h=400&fit=crop" alt="Timber work in progress">
-      <span class="gal-label">Work In Progress</span>
-    </div>
-    <div class="gal-cell rv">
-      <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&h=400&fit=crop" alt="Sleeper raised beds garden">
-      <span class="gal-label">Raised Beds</span>
-    </div>
-  </div>
-</section>
-
-<!-- WHY -->
-<section class="why" id="why">
-  <div class="why-l">
-    <div>
-      <div class="sn">02 — About</div>
-      <h2 class="why-q rv">Every job gets the same attention — whether it's <em>3 panels or 300.</em></h2>
-      <p class="why-at">We're a small team and we intend to keep it that way. Every job is done by people who care about the work, not subcontracted out to whoever's cheapest that week.</p>
-    </div>
-  </div>
-  <div class="why-r">
-    <div class="why-i rv"><div class="why-mk"></div><div><div class="why-it">Fully Insured</div><div class="why-tx">£2 million public liability. You're covered on every job, whether it's a garden fence or a commercial site boundary.</div></div></div>
-    <div class="why-i rv"><div class="why-mk"></div><div><div class="why-it">Free Same-Day Quotes</div><div class="why-tx">Call or message and we'll aim to get a quote back to you the same day. No obligation, no hard sell.</div></div></div>
-    <div class="why-i rv"><div class="why-mk"></div><div><div class="why-it">Quality Timber Only</div><div class="why-tx">We use pressure-treated timber on every job. It resists rot, lasts longer and looks better. No cheap materials.</div></div></div>
-    <div class="why-i rv"><div class="why-mk"></div><div><div class="why-it">We Clean Up</div><div class="why-tx">We leave the site tidy. All old timber removed and disposed of. You just see the finished job.</div></div></div>
-  </div>
-</section>
-
-<!-- FULL-BLEED IMAGE BAND 2 -->
-<div class="img-band">
-  <!-- REPLACE: Another strong job photo -->
-  <img src="https://images.unsplash.com/photo-1594897030264-ab7d87efc473?w=1600&h=700&fit=crop" alt="Timber fencing close-up detail">
-  <div class="img-band-overlay">
-    <div class="img-band-text">
-      <h2>Built by people<br>who <em>care.</em></h2>
-      <p>Small team, big standards. Every job is hands-on, start to finish.</p>
-    </div>
-  </div>
-</div>
-
-<!-- PROCESS -->
-<section class="prc" id="process">
+<section class="section grey">
   <div class="ctr">
-    <div class="sn rv">03 — Process</div>
-    <h2 class="sh rv">How it <em>works.</em></h2>
-    <div class="prc-g">
-      <div class="prc-s rv"><div class="prc-nm">01</div><div class="prc-ti">Get in Touch</div><p class="prc-tx">Call, WhatsApp or fill in the form. Tell us what you need — fence length, type, any access issues.</p></div>
-      <div class="prc-s rv"><div class="prc-nm">02</div><div class="prc-ti">Free Quote</div><p class="prc-tx">We measure up or quote from your details. Clear, itemised price — no surprises.</p></div>
-      <div class="prc-s rv"><div class="prc-nm">03</div><div class="prc-ti">Book a Date</div><p class="prc-tx">Happy with the price? We book you in. Most jobs start within 1–2 weeks.</p></div>
-      <div class="prc-s rv"><div class="prc-nm">04</div><div class="prc-ti">Job Done</div><p class="prc-tx">We turn up, do the work, clean up. You get photos and a follow-up call.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- REVIEWS -->
-<section class="rev" id="reviews">
-  <div class="ctr">
-    <div class="sn rv">04 — Reviews</div>
+    <div class="sn rv">Reviews</div>
     <h2 class="sh rv">Trusted by <em>Londoners.</em></h2>
-    <div class="rev-g">
-      <div class="rev-c rv"><div class="rev-st">★ ★ ★ ★ ★</div><p class="rev-tx">"Had 12 panels replaced after the January storms. The team arrived on time, cleared everything and left a solid, straight fence. Really impressed."</p><div class="rev-au">James R.</div><div class="rev-lo">Ealing, West London</div></div>
-      <div class="rev-c rv"><div class="rev-st">★ ★ ★ ★ ★</div><p class="rev-tx">"We asked for a closeboard fence with a gate, and they delivered exactly what was quoted. Tidy work, fair price, no messing about."</p><div class="rev-au">Sarah T.</div><div class="rev-lo">Ruislip, Hillingdon</div></div>
-      <div class="rev-c rv"><div class="rev-st">★ ★ ★ ★ ★</div><p class="rev-tx">"Quality timber, properly built decking, and they cleaned up after themselves. Rare to find tradespeople who do that."</p><div class="rev-au">David & Claire M.</div><div class="rev-lo">Uxbridge, West London</div></div>
+    <div class="grid-3" style="margin-top:40px">
+      <div class="rev-card rv"><div class="rev-st">&starf; &starf; &starf; &starf; &starf;</div><p class="rev-tx">"Had 12 panels replaced after the January storms. The team arrived on time, cleared everything and left a solid, straight fence."</p><div class="rev-au">James R.</div><div class="rev-lo">Ealing, West London</div></div>
+      <div class="rev-card rv"><div class="rev-st">&starf; &starf; &starf; &starf; &starf;</div><p class="rev-tx">"Closeboard fence with a gate, delivered exactly what was quoted. Tidy work, fair price, no messing about."</p><div class="rev-au">Sarah T.</div><div class="rev-lo">Ruislip, Hillingdon</div></div>
+      <div class="rev-card rv"><div class="rev-st">&starf; &starf; &starf; &starf; &starf;</div><p class="rev-tx">"Quality timber, properly built decking, and they cleaned up after themselves. Rare to find tradespeople who do that."</p><div class="rev-au">David &amp; Claire M.</div><div class="rev-lo">Uxbridge, West London</div></div>
     </div>
+    <div style="text-align:center;margin-top:36px"><a href="reviews.html" class="btn-o">All Reviews <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></a></div>
   </div>
 </section>
 
-<!-- AREAS -->
-<section class="areas" id="areas">
+<section class="section">
   <div class="ctr">
-    <div class="areas-top">
-      <div><div class="sn rv">05 — Coverage</div><h2 class="sh rv">Areas we <em>cover.</em></h2></div>
-      <p class="areas-d rv">Based in Ruislip, we cover all of London and the surrounding areas. If you're not sure whether we cover your area, just ask.</p>
-    </div>
-    <div class="areas-l rv">
-      <span class="area-t">Ruislip</span><span class="area-t">Hillingdon</span><span class="area-t">Uxbridge</span><span class="area-t">Northwood</span><span class="area-t">Pinner</span><span class="area-t">Harrow</span><span class="area-t">Ealing</span><span class="area-t">Acton</span><span class="area-t">Hounslow</span><span class="area-t">Richmond</span><span class="area-t">Watford</span><span class="area-t">Slough</span><span class="area-t">Gerrards Cross</span><span class="area-t">Beaconsfield</span><span class="area-t">Amersham</span><span class="area-t">Wembley</span><span class="area-t">Greenford</span><span class="area-t">Hayes</span><span class="area-t">West Drayton</span><span class="area-t">Ickenham</span>
+    <div class="grid-2">
+      <div>
+        <div class="sn rv">Commercial</div>
+        <h2 class="sh rv">We work with <em>businesses.</em></h2>
+        <p class="s-intro rv">Property developers, landlords, housing associations and estate managers. Bulk pricing, scheduled maintenance, and priority response.</p>
+        <div style="margin-top:28px"><a href="commercial.html" class="btn-o rv">Commercial Services <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+      <div class="rv" style="display:flex;flex-wrap:wrap;gap:16px;align-content:center">
+        <div class="stat" style="flex:1;min-width:140px"><div class="stat-num">500+</div><div class="stat-label">Jobs completed</div></div>
+        <div class="stat" style="flex:1;min-width:140px"><div class="stat-num">100%</div><div class="stat-label">Satisfaction rate</div></div>
+        <div class="stat" style="flex:1;min-width:140px"><div class="stat-num">&pound;2m</div><div class="stat-label">Public liability</div></div>
+        <div class="stat" style="flex:1;min-width:140px"><div class="stat-num">Same<br><span style="font-size:24px">Day</span></div><div class="stat-label">Quote response</div></div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
-<section class="cnt" id="contact">
-  <div class="cnt-l">
-    <div>
-      <div class="sn">06 — Contact</div>
-      <h2 class="cnt-h rv">Get a free <em>quote.</em></h2>
-      <p class="cnt-d">Tell us what you need and we'll get back to you the same day. No obligation.</p>
-    </div>
-    <div class="cnt-dets">
-      <div class="cnt-det"><div class="cnt-dl">Phone</div><div class="cnt-dv"><a href="tel:08000000000">0800 000 0000</a></div></div>
-      <div class="cnt-det"><div class="cnt-dl">Email</div><div class="cnt-dv"><a href="mailto:hello@solidgrain.co.uk">hello@solidgrain.co.uk</a></div></div>
-      <div class="cnt-det"><div class="cnt-dl">WhatsApp</div><div class="cnt-dv"><a href="#">Message Us</a></div></div>
-      <div class="cnt-det"><div class="cnt-dl">Hours</div><div class="cnt-dv">Mon–Fri 7am–6pm · Sat 8am–4pm</div></div>
-    </div>
+<div class="cta-band">
+  <h2>Ready to get <em>started?</em></h2>
+  <p>Tell us what you need. Free quote, same-day response, no obligation.</p>
+  <div class="btn-group">
+    <a href="contact.html" class="btn-b">Get a Free Quote <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></a>
+    <a href="tel:08000000000" class="btn-o" style="color:var(--white);border-color:var(--g3)">Call Us</a>
   </div>
-  <div class="cnt-r">
-    <div class="fh">Request a Quote</div>
-    <p class="fsb">Fill in the details below.</p>
-    <form onsubmit="handleSubmit(event)">
-      <div class="fr"><div><label class="fl" for="fname">First Name</label><input class="fi" type="text" id="fname" name="fname" required></div><div><label class="fl" for="lname">Last Name</label><input class="fi" type="text" id="lname" name="lname" required></div></div>
-      <div class="fr"><div><label class="fl" for="phone">Phone</label><input class="fi" type="tel" id="phone" name="phone" required></div><div><label class="fl" for="email">Email</label><input class="fi" type="email" id="email" name="email"></div></div>
-      <div class="fg"><label class="fl" for="service">Service</label><select class="fsel" id="service" name="service"><option value="">Select a service</option><option value="closeboard">Closeboard Fencing</option><option value="decking">Timber Decking</option><option value="structures">Garden Structures</option><option value="repairs">Repairs & Maintenance</option><option value="gates">Gates</option><option value="other">Other</option></select></div>
-      <div class="fg"><label class="fl" for="postcode">Postcode</label><input class="fi" type="text" id="postcode" name="postcode" placeholder="e.g. HA4 7AA"></div>
-      <div class="fg"><label class="fl" for="message">Tell us about the job</label><textarea class="fta" id="message" name="message" placeholder="Fence length, height, access issues..."></textarea></div>
-      <button class="fbtn" type="submit">Send Quote Request</button>
-      <p class="fnote">We'll aim to respond the same day. No obligation.</p>
-    </form>
-  </div>
-</section>
-
-<!-- FOOTER -->
+</div>
 <footer class="ftr">
   <div class="ctr">
-    <div class="ftr-in">
-      <div><div class="ftr-b">Solid <span>Grain</span></div><div class="ftr-reg">Solid Grain · Registered in England & Wales</div></div>
-      <div class="ftr-lk"><a href="#services">Services</a><a href="#gallery">Work</a><a href="#why">About</a><a href="#reviews">Reviews</a><a href="#contact">Contact</a></div>
-      <div class="ftr-lk"><a href="#">Privacy Policy</a><a href="#">Terms & Conditions</a></div>
-      <div class="ftr-cp">© 2025 Solid Grain. All rights reserved.</div>
+    <div class="ftr-grid">
+      <div>
+        <div class="ftr-b">Solid <span>Grain</span></div>
+        <p class="ftr-desc">London timber fencing contractor. Closeboard fencing, decking and garden structures. Built solid, built to last.</p>
+        <div class="ftr-reg">Solid Grain &middot; Registered in England &amp; Wales</div>
+      </div>
+      <div>
+        <div class="ftr-col-t">Services</div>
+        <ul class="ftr-links">
+          <li><a href="services/fencing.html">Closeboard Fencing</a></li>
+          <li><a href="services/decking.html">Timber Decking</a></li>
+          <li><a href="services/structures.html">Garden Structures</a></li>
+          <li><a href="services/repairs.html">Repairs</a></li>
+          <li><a href="commercial.html">Commercial Work</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="ftr-col-t">Company</div>
+        <ul class="ftr-links">
+          <li><a href="about.html">Our Mission</a></li>
+          <li><a href="gallery.html">Our Work</a>
+  <a href="pricing.html" onclick="closeMobileNav()">Pricing</a></li>
+          <li><a href="reviews.html">Reviews</a></li>
+          <li><a href="areas.html">Areas Covered</a></li>
+          <li><a href="faq.html">FAQs</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="ftr-col-t">Contact</div>
+        <ul class="ftr-links">
+          <li><a href="tel:08000000000">0800 000 0000</a></li>
+          <li><a href="mailto:hello@solidgrain.co.uk">hello@solidgrain.co.uk</a></li>
+          <li><a href="#">WhatsApp Us</a></li>
+        </ul>
+        <div style="margin-top:14px;font-size:11px;color:var(--g5)">Mon–Fri 7am–6pm<br>Sat 8am–4pm</div>
+      </div>
+    </div>
+    <div class="ftr-bot">
+      <div class="ftr-cp">&copy; 2025 Solid Grain. All rights reserved.</div>
+      <div class="ftr-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms &amp; Conditions</a>
+      </div>
     </div>
   </div>
 </footer>
-
-<script>
-function toggleMobileNav(){document.getElementById('mobileNav').classList.toggle('open')}
-function closeMobileNav(){document.getElementById('mobileNav').classList.remove('open')}
-var obs=new IntersectionObserver(function(e){e.forEach(function(en){if(en.isIntersecting){en.target.classList.add('vis');obs.unobserve(en.target)}})},{threshold:.08});
-document.querySelectorAll('.rv').forEach(function(el){obs.observe(el)});
-function handleSubmit(e){e.preventDefault();var b=e.target.querySelector('.fbtn');b.textContent="Sent — we'll be in touch shortly.";b.style.background='#D14836';b.disabled=true;setTimeout(function(){b.textContent='Send Quote Request';b.style.background='';b.disabled=false;e.target.reset()},4000)}
-</script>
+<script src="js/main.js"></script>
 </body>
 </html>
