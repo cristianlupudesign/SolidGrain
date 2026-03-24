@@ -4,14 +4,219 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pricing — Solid Grain</title>
-<meta name="description" content="Solid Grain pricing guide — supply and install prices for closeboard fencing, decking, pergolas, sheds, gates and more across London.">
+<meta name="description" content="Solid Grain pricing guide — supply and install prices for fencing, decking, pergolas, sheds and more.">
 <meta name="theme-color" content="#000000">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
 <style>
-/* Pricing-specific styles */
+/* ═══════════════════════════════════════════════════════
+   SOLID GRAIN — SHARED STYLESHEET
+   Pentagram style: Black · White · Red · Flat · Utilitarian
+   ═══════════════════════════════════════════════════════ */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--black:#000;--white:#FFF;--red:#D14836;--g1:#111;--g2:#1A1A1A;--g3:#333;--g4:#666;--g5:#999;--g6:#E5E5E5;--g7:#F5F5F5;--font:'Instrument Sans',sans-serif;--mw:1320px;--hh:60px}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);font-weight:400;color:var(--black);background:var(--white);line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}ul{list-style:none}img{max-width:100%;display:block}
+::selection{background:var(--red);color:var(--white)}
+.ctr{max-width:var(--mw);margin:0 auto;padding:0 32px}
+
+/* ── HEADER ── */
+.hdr{position:fixed;top:0;left:0;right:0;z-index:1000;height:var(--hh);background:var(--white);border-bottom:1px solid var(--black)}
+.hdr-in{max-width:var(--mw);margin:0 auto;padding:0 32px;height:100%;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:15px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}.logo span{color:var(--red)}
+.nav{display:flex;align-items:center;gap:24px}
+.nav a{font-size:13px;font-weight:500;letter-spacing:.04em;color:var(--g4);transition:color .2s;position:relative}.nav a:hover,.nav a.active{color:var(--black)}
+.nav a.active::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:1px;background:var(--red)}
+.nav-q{color:var(--white)!important;background:var(--black);padding:8px 20px;font-weight:600;transition:background .2s}.nav-q:hover{background:var(--red)}.nav-q.active::after{display:none}
+/* Dropdown */
+.nav-drop{position:relative}
+.nav-drop:hover .drop-menu{display:block}
+.drop-menu{display:none;position:absolute;top:100%;left:-12px;background:var(--white);border:1px solid var(--black);min-width:200px;padding:8px 0;z-index:100}
+.drop-menu a{display:block;padding:8px 16px;font-size:12px;font-weight:500;letter-spacing:.04em;color:var(--g4);transition:all .15s}.drop-menu a:hover{background:var(--g7);color:var(--black)}
+.drop-menu a.active::after{display:none}
+/* Burger */
+.burger{display:none;background:0 0;border:0;cursor:pointer;padding:6px}.burger svg{display:block}
+.mnav{display:none;position:fixed;top:var(--hh);left:0;right:0;bottom:0;background:var(--white);z-index:999;padding:32px;border-top:1px solid var(--black);overflow-y:auto}
+.mnav.open{display:flex;flex-direction:column}
+.mnav a{font-size:24px;font-weight:700;letter-spacing:-.02em;padding:14px 0;border-bottom:1px solid var(--g6);color:var(--black)}.mnav a:last-child{border-bottom:0}.mnav a:hover{color:var(--red)}
+.mnav-sub{padding-left:20px}.mnav-sub a{font-size:16px;font-weight:500;color:var(--g4)}
+@media(max-width:900px){.nav{display:none}.burger{display:block}}
+
+/* ── BUTTONS ── */
+.btn-b{display:inline-flex;align-items:center;gap:10px;font-size:14px;font-weight:600;letter-spacing:.04em;color:var(--white);background:var(--black);padding:14px 32px;transition:background .2s;border:0;cursor:pointer;font-family:var(--font)}.btn-b:hover{background:var(--red)}
+.btn-b svg{transition:transform .2s}.btn-b:hover svg{transform:translateX(4px)}
+.btn-o{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;letter-spacing:.04em;color:var(--black);background:0 0;padding:14px 28px;border:1px solid var(--black);transition:all .2s;cursor:pointer;font-family:var(--font)}.btn-o:hover{background:var(--black);color:var(--white)}
+.btn-r{display:inline-flex;align-items:center;gap:10px;font-size:14px;font-weight:600;letter-spacing:.04em;color:var(--white);background:var(--red);padding:14px 32px;transition:background .2s;border:0;cursor:pointer;font-family:var(--font)}.btn-r:hover{background:var(--black)}
+
+/* ── SECTION GLOBALS ── */
+.sn{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--g5);margin-bottom:12px}
+.sh{font-size:clamp(36px,5vw,64px);font-weight:700;line-height:.95;letter-spacing:-.03em;margin-bottom:24px}.sh em{font-style:normal;color:var(--red)}
+.s-intro{font-size:16px;color:var(--g4);max-width:540px;line-height:1.65}
+
+/* ── PAGE HERO (inner pages) ── */
+.page-hero{padding:calc(var(--hh) + 80px) 0 80px;border-bottom:1px solid var(--black)}
+.page-hero.dark{background:var(--black);color:var(--white)}
+.page-hero.dark .sn{color:var(--g4)}
+.page-hero.dark .sh{color:var(--white)}
+.page-hero.dark .s-intro{color:var(--g5)}
+.page-hero-split{display:grid;grid-template-columns:1fr 1fr;gap:0;min-height:480px}
+.page-hero-split .ph-text{padding:calc(var(--hh) + 60px) 48px 60px;display:flex;flex-direction:column;justify-content:flex-end}
+.page-hero-split .ph-img{position:relative;overflow:hidden;border-left:1px solid var(--black)}.page-hero-split .ph-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+@media(max-width:768px){.page-hero-split{grid-template-columns:1fr}.page-hero-split .ph-img{min-height:300px;border-left:0;border-top:1px solid var(--black)}}
+
+/* ── TICKER ── */
+.tick{background:var(--black);overflow:hidden;padding:14px 0;border-bottom:1px solid var(--g3)}
+.tick-tr{display:flex;animation:scr 20s linear infinite;width:max-content}
+.tick-i{font-size:13px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--white);white-space:nowrap;padding:0 32px}
+.tick-d{color:var(--red);padding:0 8px}
+@keyframes scr{from{transform:translateX(0)}to{transform:translateX(-33.333%)}}
+
+/* ── CONTENT SECTIONS ── */
+.section{padding:100px 0;border-bottom:1px solid var(--black)}
+.section.dark{background:var(--black);color:var(--white)}
+.section.dark .sn{color:var(--g4)}
+.section.dark .sh{color:var(--white)}
+.section.dark .s-intro{color:var(--g5)}
+.section.grey{background:var(--g7)}
+.section.no-border{border-bottom:0}
+
+/* ── GRID LAYOUTS ── */
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+@media(max-width:900px){.grid-2{grid-template-columns:1fr}.grid-3{grid-template-columns:1fr 1fr}.grid-4{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.grid-3,.grid-4{grid-template-columns:1fr}}
+
+/* ── CARDS ── */
+.card{border:1px solid var(--g6);transition:transform .3s,box-shadow .3s}
+.card:hover{transform:translateY(-3px);box-shadow:0 8px 30px rgba(0,0,0,.06)}
+.card-img{height:240px;overflow:hidden;position:relative;background:var(--g7)}.card-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}.card:hover .card-img img{transform:scale(1.04)}
+.card-body{padding:28px 24px}
+.card-tag{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--red);margin-bottom:8px}
+.card-title{font-size:20px;font-weight:700;letter-spacing:-.02em;line-height:1.2;margin-bottom:8px}
+.card-text{font-size:14px;color:var(--g4);line-height:1.6}
+.card-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--black);margin-top:16px;transition:color .2s}.card-link:hover{color:var(--red)}
+.card-link svg{transition:transform .2s}.card-link:hover svg{transform:translateX(4px)}
+
+/* ── IMAGE BAND ── */
+.img-band{height:50vh;min-height:360px;max-height:540px;overflow:hidden;position:relative;border-bottom:1px solid var(--black)}
+.img-band img{width:100%;height:100%;object-fit:cover}
+.img-band-ov{position:absolute;inset:0;background:rgba(0,0,0,.4);display:flex;align-items:center;justify-content:center}
+.img-band-tx{color:var(--white);text-align:center;padding:20px}
+.img-band-tx h2{font-size:clamp(28px,4vw,52px);font-weight:700;line-height:.95;letter-spacing:-.03em}.img-band-tx h2 em{font-style:normal;color:var(--red)}
+.img-band-tx p{font-size:15px;color:rgba(255,255,255,.65);margin-top:14px;max-width:400px;margin-left:auto;margin-right:auto;line-height:1.6}
+
+/* ── GALLERY GRID ── */
+.gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:4px}
+@media(max-width:768px){.gal-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.gal-grid{grid-template-columns:1fr}}
+.gal-cell{overflow:hidden;position:relative;height:280px}
+.gal-cell img{width:100%;height:100%;object-fit:cover;transition:transform .5s}.gal-cell:hover img{transform:scale(1.05)}
+.gal-cell.tall{grid-row:span 2;height:auto}
+.gal-label{position:absolute;bottom:12px;left:12px;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--white);background:rgba(0,0,0,.6);padding:4px 10px;backdrop-filter:blur(4px)}
+
+/* ── SPLIT SECTION ── */
+.split{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--black)}
+@media(max-width:768px){.split{grid-template-columns:1fr}}
+.split-dark{background:var(--black);padding:80px 48px;display:flex;flex-direction:column;justify-content:center}
+.split-dark .sn{color:var(--g4)}
+.split-light{background:var(--white);padding:80px 48px;display:flex;flex-direction:column;justify-content:center}
+
+/* ── WHY ITEMS ── */
+.why-i{display:flex;gap:20px;align-items:flex-start;margin-bottom:32px}
+.why-i:last-child{margin-bottom:0}
+.why-mk{width:28px;height:2px;background:var(--red);margin-top:10px;flex-shrink:0}
+.why-it{font-size:16px;font-weight:700;letter-spacing:-.01em;margin-bottom:4px}
+.why-tx{font-size:14px;color:var(--g4);line-height:1.6}
+
+/* ── PROCESS STEPS ── */
+.prc-g{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+@media(max-width:768px){.prc-g{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.prc-g{grid-template-columns:1fr}}
+.prc-s{padding:40px 28px;border-left:1px solid var(--g6)}.prc-s:first-child{border-left:1px solid var(--black)}
+.prc-nm{font-size:64px;font-weight:700;letter-spacing:-.04em;color:var(--g6);line-height:1;margin-bottom:20px}.prc-s:hover .prc-nm{color:var(--red)}
+.prc-ti{font-size:18px;font-weight:700;letter-spacing:-.01em;margin-bottom:8px}
+.prc-tx{font-size:14px;color:var(--g4);line-height:1.6}
+
+/* ── REVIEWS ── */
+.rev-card{padding:36px 28px;border-left:1px solid var(--g6)}
+.rev-card:first-child{border-left:1px solid var(--black)}
+.rev-st{font-size:14px;color:var(--red);letter-spacing:2px;margin-bottom:16px}
+.rev-tx{font-size:15px;line-height:1.65;margin-bottom:20px;font-style:italic}
+.rev-au{font-size:13px;font-weight:700;letter-spacing:.04em}
+.rev-lo{font-size:12px;color:var(--g5);margin-top:2px}
+.rev-svc{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--red);margin-top:8px}
+
+/* ── AREA TAGS ── */
+.area-t{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:8px 16px;border:1px solid var(--g6);color:var(--g4);transition:all .2s;display:inline-block;margin:0 6px 6px 0}
+.area-t:hover{border-color:var(--black);color:var(--black);background:var(--g7)}
+
+/* ── FAQ ── */
+.faq-item{border-bottom:1px solid var(--g6);padding:24px 0}
+.faq-q{font-size:17px;font-weight:700;letter-spacing:-.01em;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.faq-q svg{flex-shrink:0;transition:transform .3s}
+.faq-item.open .faq-q svg{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s;font-size:15px;color:var(--g4);line-height:1.65}
+.faq-item.open .faq-a{max-height:500px;padding-top:16px}
+
+/* ── CONTACT FORM ── */
+.fr{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+@media(max-width:480px){.fr{grid-template-columns:1fr}}
+.fg{margin-bottom:16px}
+.fl{display:block;font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--g5);margin-bottom:6px}
+.fi,.fsel,.fta{width:100%;padding:12px 0;background:0 0;border:0;border-bottom:1px solid var(--g6);color:var(--black);font-family:var(--font);font-size:15px;font-weight:500;outline:0;transition:border-color .2s;border-radius:0;-webkit-appearance:none}
+.fi:focus,.fsel:focus,.fta:focus{border-color:var(--black)}
+.fta{min-height:80px;resize:vertical;border:1px solid var(--g6);padding:12px;margin-top:4px}.fta:focus{border-color:var(--black)}
+.fsel{cursor:pointer;color:var(--g4)}
+.fbtn{width:100%;padding:16px;background:var(--black);color:var(--white);font-family:var(--font);font-size:14px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;border:0;cursor:pointer;transition:background .2s;margin-top:8px}.fbtn:hover{background:var(--red)}
+.fnote{font-size:12px;color:var(--g5);margin-top:12px}
+/* White form variant */
+.form-white .fi,.form-white .fsel,.form-white .fta{border-color:var(--g3);color:var(--white)}
+.form-white .fi:focus,.form-white .fsel:focus,.form-white .fta:focus{border-color:var(--red)}
+.form-white .fl{color:var(--g5)}
+.form-white .fsel{color:var(--g5)}
+
+/* ── STAT BLOCKS ── */
+.stat{text-align:center;padding:32px 20px}
+.stat-num{font-size:48px;font-weight:700;letter-spacing:-.04em;line-height:1;color:var(--red)}
+.stat-label{font-size:13px;font-weight:500;color:var(--g4);margin-top:8px}
+
+/* ── BLOG ── */
+.blog-card .card-date{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--g5);margin-bottom:8px}
+.blog-card .card-excerpt{font-size:14px;color:var(--g4);line-height:1.6;margin-top:8px}
+
+/* ── FOOTER ── */
+.ftr{background:var(--black);padding:60px 0 28px;border-top:1px solid var(--black)}
+.ftr-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px}
+@media(max-width:768px){.ftr-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.ftr-grid{grid-template-columns:1fr}}
+.ftr-b{font-size:15px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--white)}.ftr-b span{color:var(--red)}
+.ftr-desc{font-size:13px;color:var(--g4);line-height:1.6;margin-top:12px;max-width:280px}
+.ftr-reg{font-size:11px;color:var(--g5);margin-top:14px}
+.ftr-col-t{font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--g5);margin-bottom:14px}
+.ftr-links li{margin-bottom:8px}.ftr-links a{font-size:13px;color:var(--g4);transition:color .2s}.ftr-links a:hover{color:var(--red)}
+.ftr-bot{margin-top:48px;padding-top:20px;border-top:1px solid var(--g3);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.ftr-cp{font-size:12px;color:var(--g5)}
+.ftr-legal{display:flex;gap:20px}.ftr-legal a{font-size:12px;color:var(--g5);transition:color .2s}.ftr-legal a:hover{color:var(--red)}
+
+/* ── CTA BAND ── */
+.cta-band{background:var(--black);padding:80px 0;text-align:center;border-bottom:1px solid var(--g3)}
+.cta-band h2{font-size:clamp(28px,4vw,48px);font-weight:700;line-height:.95;letter-spacing:-.03em;color:var(--white);margin-bottom:16px}
+.cta-band h2 em{font-style:normal;color:var(--red)}
+.cta-band p{font-size:15px;color:var(--g4);margin-bottom:28px;max-width:400px;margin-left:auto;margin-right:auto;line-height:1.6}
+.cta-band .btn-group{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+/* ── REVEAL ── */
+.rv{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}.rv.vis{opacity:1;transform:translateY(0)}
+
+/* ── BREADCRUMB ── */
+.bread{padding-top:calc(var(--hh) + 20px);padding-bottom:0;font-size:12px;color:var(--g5);display:flex;align-items:center;gap:6px}
+.bread a{color:var(--g5);transition:color .2s}.bread a:hover{color:var(--black)}
+.bread-sep{color:var(--g6)}
+
+
 .price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:60px}
 @media(max-width:900px){.price-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:520px){.price-grid{grid-template-columns:1fr}}
@@ -32,19 +237,15 @@
 .price-unit{font-size:13px;color:var(--g4);font-weight:500}
 .price-note{font-size:11px;color:var(--g5);margin-top:6px}
 .price-popular{position:absolute;top:12px;right:12px;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:var(--red);color:var(--white);padding:4px 10px}
-
-/* Includes strip */
 .includes{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;margin-bottom:16px}
 .inc-tag{font-size:10px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:3px 8px;background:var(--g7);color:var(--g4)}
-
-/* Disclaimer */
 .disclaimer{background:var(--g7);padding:40px 36px;margin-top:60px}
 .disclaimer h3{font-size:18px;font-weight:700;margin-bottom:12px}
 .disclaimer p{font-size:14px;color:var(--g4);line-height:1.65}
+
 </style>
 </head>
 <body>
-
 <header class="hdr">
   <div class="hdr-in">
     <a href="index.html" class="logo">Solid <span>Grain</span></a>
@@ -53,15 +254,16 @@
       <div class="nav-drop">
         <a href="services.html">Services</a>
         <div class="drop-menu">
-          <a href="services/fencing.html">Closeboard Fencing</a>
-          <a href="services/decking.html">Timber Decking</a>
-          <a href="services/structures.html">Garden Structures</a>
-          <a href="services/repairs.html">Repairs &amp; Maintenance</a>
+          <a href="fencing.html">Closeboard Fencing</a>
+          <a href="decking.html">Timber Decking</a>
+          <a href="structures.html">Garden Structures</a>
+          <a href="repairs.html">Repairs &amp; Maintenance</a>
         </div>
       </div>
       <a href="gallery.html">Work</a>
       <a href="pricing.html" class="active">Pricing</a>
       <a href="commercial.html">Commercial</a>
+      <a href="reviews.html">Reviews</a>
       <a href="contact.html" class="nav-q">Get a Quote</a>
     </nav>
     <button class="burger" onclick="toggleMobileNav()" aria-label="Menu">
@@ -73,6 +275,12 @@
   <a href="index.html" onclick="closeMobileNav()">Home</a>
   <a href="about.html" onclick="closeMobileNav()">About</a>
   <a href="services.html" onclick="closeMobileNav()">Services</a>
+  <div class="mnav-sub">
+    <a href="fencing.html" onclick="closeMobileNav()">Closeboard Fencing</a>
+    <a href="decking.html" onclick="closeMobileNav()">Timber Decking</a>
+    <a href="structures.html" onclick="closeMobileNav()">Garden Structures</a>
+    <a href="repairs.html" onclick="closeMobileNav()">Repairs</a>
+  </div>
   <a href="gallery.html" onclick="closeMobileNav()">Our Work</a>
   <a href="pricing.html" onclick="closeMobileNav()">Pricing</a>
   <a href="commercial.html" onclick="closeMobileNav()">Commercial</a>
@@ -83,7 +291,6 @@
   <a href="contact.html" onclick="closeMobileNav()">Get a Quote</a>
 </nav>
 
-<!-- HERO -->
 <section class="page-hero dark">
   <div class="ctr">
     <div class="sn">Pricing</div>
@@ -92,381 +299,73 @@
   </div>
 </section>
 
-<!-- FENCING PRICES -->
 <section class="section">
   <div class="ctr">
     <div class="sn rv">Fencing</div>
     <h2 class="sh rv">Fence <em>types.</em></h2>
-    <p class="s-intro rv" style="margin-bottom:0">All fencing prices include posts, gravel boards, panels/boards, arris rails, concrete and labour. Old fence removal included.</p>
-
+    <p class="s-intro rv" style="margin-bottom:0">All prices include posts, gravel boards, panels, concrete and labour. Old fence removal included.</p>
     <div class="price-grid">
-      <!-- Closeboard Panels + Concrete Posts -->
-      <div class="price-card rv">
-        <div class="price-img" style="position:relative">
-          <!-- REPLACE: Your closeboard fence photo -->
-          <img src="https://images.unsplash.com/photo-1594897030264-ab7d87efc473?w=600&h=360&fit=crop" alt="Closeboard panel fencing with concrete posts">
-          <span class="price-popular">Most Popular</span>
-        </div>
-        <div class="price-body">
-          <div class="price-label">Supply &amp; Install</div>
-          <div class="price-name">Closeboard Panels + Concrete Posts</div>
-          <p class="price-desc">6ft closeboard panels, concrete slotted posts and concrete gravel boards. The most popular and durable residential option.</p>
-          <div class="includes">
-            <span class="inc-tag">Concrete Posts</span>
-            <span class="inc-tag">Gravel Boards</span>
-            <span class="inc-tag">Panels</span>
-            <span class="inc-tag">Old Fence Removal</span>
-          </div>
-          <div class="price-from">
-            <span style="font-size:13px;color:var(--red);font-weight:600">from</span>
-            <span class="price-amount">&pound;95</span>
-            <span class="price-unit">per metre</span>
-          </div>
-          <div class="price-note">Typical job (10m): ~&pound;950</div>
-        </div>
-      </div>
-
-      <!-- Closeboard Panels + Timber Posts -->
-      <div class="price-card rv">
-        <div class="price-img">
-          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&h=360&fit=crop" alt="Closeboard panel fencing with timber posts">
-        </div>
-        <div class="price-body">
-          <div class="price-label">Supply &amp; Install</div>
-          <div class="price-name">Closeboard Panels + Timber Posts</div>
-          <p class="price-desc">6ft closeboard panels with pressure-treated timber posts and timber gravel boards. Traditional look, lower cost.</p>
-          <div class="includes">
-            <span class="inc-tag">Timber Posts</span>
-            <span class="inc-tag">Gravel Boards</span>
-            <span class="inc-tag">Panels</span>
-            <span class="inc-tag">Old Fence Removal</span>
-          </div>
-          <div class="price-from">
-            <span style="font-size:13px;color:var(--red);font-weight:600">from</span>
-            <span class="price-amount">&pound;80</span>
-            <span class="price-unit">per metre</span>
-          </div>
-          <div class="price-note">Typical job (10m): ~&pound;800</div>
-        </div>
-      </div>
-
-      <!-- Continuous Featheredge -->
-      <div class="price-card rv">
-        <div class="price-img">
-          <img src="https://images.unsplash.com/photo-1594897030264-ab7d87efc473?w=600&h=360&fit=crop&sat=-100" alt="Continuous featheredge fencing">
-        </div>
-        <div class="price-body">
-          <div class="price-label">Supply &amp; Install</div>
-          <div class="price-name">Continuous Featheredge</div>
-          <p class="price-desc">Individual featheredge boards nailed to arris rails on site. Follows uneven ground perfectly. Strongest option.</p>
-          <div class="includes">
-            <span class="inc-tag">Concrete Posts</span>
-            <span class="inc-tag">Arris Rails</span>
-            <span class="inc-tag">Featheredge Boards</span>
-            <span class="inc-tag">Old Fence Removal</span>
-          </div>
-          <div class="price-from">
-            <span style="font-size:13px;color:var(--red);font-weight:600">from</span>
-            <span class="price-amount">&pound;110</span>
-            <span class="price-unit">per metre</span>
-          </div>
-          <div class="price-note">Typical job (10m): ~&pound;1,100</div>
-        </div>
-      </div>
-
-      <!-- Lap Panel Fencing -->
-      <div class="price-card rv">
-        <div class="price-img">
-          <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&h=360&fit=crop" alt="Lap panel fencing">
-        </div>
-        <div class="price-body">
-          <div class="price-label">Supply &amp; Install</div>
-          <div class="price-name">Lap Panel Fencing</div>
-          <p class="price-desc">Horizontal overlap panels with concrete posts. Budget-friendly option, good for sheltered gardens.</p>
-          <div class="includes">
-            <span class="inc-tag">Concrete Posts</span>
-            <span class="inc-tag">Gravel Boards</span>
-            <span class="inc-tag">Lap Panels</span>
-            <span class="inc-tag">Old Fence Removal</span>
-          </div>
-          <div class="price-from">
-            <span style="font-size:13px;color:var(--red);font-weight:600">from</span>
-            <span class="price-amount">&pound;75</span>
-            <span class="price-unit">per metre</span>
-          </div>
-          <div class="price-note">Typical job (10m): ~&pound;750</div>
-        </div>
-      </div>
-
-      <!-- Trellis Topper -->
-      <div class="price-card rv">
-        <div class="price-img">
-          <img src="https://images.unsplash.com/photo-1598902108854-d1446677672c?w=600&h=360&fit=crop" alt="Trellis topped fence">
-        </div>
-        <div class="price-body">
-          <div class="price-label">Add-On</div>
-          <div class="price-name">Trellis Topper</div>
-          <p class="price-desc">1ft or 2ft trellis added on top of any fence for extra height and light. Popular for privacy without blocking the sun.</p>
-          <div class="price-from">
-            <span style="font-size:13px;color:var(--red);font-weight:600">from</span>
-            <span class="price-amount">&pound;15</span>
-            <span class="price-unit">per metre</span>
-          </div>
-          <div class="price-note">Added to base fence price</div>
-        </div>
-      </div>
-
-      <!-- Fence Repairs -->
-      <div class="price-card rv">
-        <div class="price-img">
-          <img src="https://images.unsplash.com/photo-1504148455328-c376907d081c?w=600&h=360&fit=crop" alt="Fence repair tools">
-        </div>
-        <div class="price-body">
-          <div class="price-label">Repairs</div>
-          <div class="price-name">Panel &amp; Post Repairs</div>
-          <p class="price-desc">Individual panel replacements, broken post repairs and storm damage fix-ups. Emergency same-day available.</p>
-          <div class="price-from">
-            <span style="font-size:13px;color:var(--red);font-weight:600">from</span>
-            <span class="price-amount">&pound;150</span>
-            <span class="price-unit">per job</span>
-          </div>
-          <div class="price-note">Send photos for a quick quote</div>
-        </div>
-      </div>
+      <div class="price-card rv"><div class="price-img" style="position:relative"><img src="https://images.unsplash.com/photo-1594897030264-ab7d87efc473?w=600&h=360&fit=crop" alt="Closeboard"><span class="price-popular">Most Popular</span></div><div class="price-body"><div class="price-label">Supply &amp; Install</div><div class="price-name">Closeboard Panels + Concrete Posts</div><p class="price-desc">6ft closeboard panels, concrete slotted posts and gravel boards. Most popular residential option.</p><div class="includes"><span class="inc-tag">Concrete Posts</span><span class="inc-tag">Gravel Boards</span><span class="inc-tag">Panels</span><span class="inc-tag">Old Fence Removal</span></div><div class="price-from"><span style="font-size:13px;color:var(--red);font-weight:600">from</span><span class="price-amount">&pound;95</span><span class="price-unit">per metre</span></div><div class="price-note">Typical job (10m): ~&pound;950</div></div></div>
+      <div class="price-card rv"><div class="price-img"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&h=360&fit=crop" alt="Timber posts"></div><div class="price-body"><div class="price-label">Supply &amp; Install</div><div class="price-name">Closeboard Panels + Timber Posts</div><p class="price-desc">6ft closeboard panels with pressure-treated timber posts. Traditional look, lower cost.</p><div class="includes"><span class="inc-tag">Timber Posts</span><span class="inc-tag">Gravel Boards</span><span class="inc-tag">Panels</span><span class="inc-tag">Old Fence Removal</span></div><div class="price-from"><span style="font-size:13px;color:var(--red);font-weight:600">from</span><span class="price-amount">&pound;80</span><span class="price-unit">per metre</span></div><div class="price-note">Typical job (10m): ~&pound;800</div></div></div>
+      <div class="price-card rv"><div class="price-img"><img src="https://images.unsplash.com/photo-1594897030264-ab7d87efc473?w=600&h=360&fit=crop&sat=-100" alt="Featheredge"></div><div class="price-body"><div class="price-label">Supply &amp; Install</div><div class="price-name">Continuous Featheredge</div><p class="price-desc">Individual boards nailed to arris rails on site. Follows uneven ground. Strongest option.</p><div class="includes"><span class="inc-tag">Concrete Posts</span><span class="inc-tag">Arris Rails</span><span class="inc-tag">Featheredge Boards</span><span class="inc-tag">Old Fence Removal</span></div><div class="price-from"><span style="font-size:13px;color:var(--red);font-weight:600">from</span><span class="price-amount">&pound;110</span><span class="price-unit">per metre</span></div><div class="price-note">Typical job (10m): ~&pound;1,100</div></div></div>
+      <div class="price-card rv"><div class="price-img"><img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&h=360&fit=crop" alt="Lap panel"></div><div class="price-body"><div class="price-label">Supply &amp; Install</div><div class="price-name">Lap Panel Fencing</div><p class="price-desc">Horizontal overlap panels with concrete posts. Budget-friendly for sheltered gardens.</p><div class="includes"><span class="inc-tag">Concrete Posts</span><span class="inc-tag">Gravel Boards</span><span class="inc-tag">Lap Panels</span><span class="inc-tag">Old Fence Removal</span></div><div class="price-from"><span style="font-size:13px;color:var(--red);font-weight:600">from</span><span class="price-amount">&pound;75</span><span class="price-unit">per metre</span></div><div class="price-note">Typical job (10m): ~&pound;750</div></div></div>
+      <div class="price-card rv"><div class="price-img"><img src="https://images.unsplash.com/photo-1598902108854-d1446677672c?w=600&h=360&fit=crop" alt="Trellis"></div><div class="price-body"><div class="price-label">Add-On</div><div class="price-name">Trellis Topper</div><p class="price-desc">1ft or 2ft trellis on top of any fence for extra height and light.</p><div class="price-from"><span style="font-size:13px;color:var(--red);font-weight:600">from</span><span class="price-amount">&pound;15</span><span class="price-unit">per metre</span></div><div class="price-note">Added to base fence price</div></div></div>
+      <div class="price-card rv"><div class="price-img"><img src="https://images.unsplash.com/photo-1504148455328-c376907d081c?w=600&h=360&fit=crop" alt="Repairs"></div><div class="price-body"><div class="price-label">Repairs</div><div class="price-name">Panel &amp; Post Repairs</div><p class="price-desc">Individual panel replacements, broken posts, storm damage. Emergency same-day available.</p><div class="price-from"><span style="font-size:13px;color:var(--red);font-weight:600">from</span><span class="price-amount">&pound;150</span><span class="price-unit">per job</span></div><div class="price-note">Send photos for quick quote</div></div></div>
     </div>
   </div>
 </section>
 
-<!-- GATES -->
 <section class="section grey">
   <div class="ctr">
     <div class="sn rv">Gates</div>
     <h2 class="sh rv">Timber <em>gates.</em></h2>
     <div class="price-grid">
-      <div class="price-card rv" style="background:var(--white)">
-        <div class="price-img">
-          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&h=360&fit=crop" alt="Standard timber gate">
-        </div>
-        <div class="price-body">
-          <div class="price-label">Supply &amp; Install</div>
-          <div class="price-name">Standard Side Gate</div>
-          <p class="price-desc">Framed, ledged and braced timber gate with galvanised hinges and latch. Up to 6ft high, up to 3ft wide.</p>
-          <div class="price-from">
-            <span style="font-size:13px;color:var(--red);font-weight:600">from</span>
-            <span class="price-amount">&pound;250</span>
-            <span class="price-unit">per gate</span>
-          </div>
-        </div>
-      </div>
-      <div class="price-card rv" style="background:var(--white)">
-        <div class="price-img">
-          <img src="https://images.unsplash.com/photo-1594897030264-ab7d87efc473?w=600&h=360&fit=crop" alt="Double driveway gates">
-        </div>
-        <div class="price-body">
-          <div class="price-label">Supply &amp; Install</div>
-          <div class="price-name">Double Driveway Gates</div>
-          <p class="price-desc">Pair of timber gates for driveway entrance. Framed and braced, heavy-duty hinges. Bespoke sizes available.</p>
-          <div class="price-from">
-            <span style="font-size:13px;color:var(--red);font-weight:600">from</span>
-            <span class="price-amount">&pound;650</span>
-            <span class="price-unit">per pair</span>
-          </div>
-        </div>
-      </div>
-      <div class="price-card rv" style="background:var(--white)">
-        <div class="price-img">
-          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&h=360&fit=crop&sat=-80" alt="Bespoke gate">
-        </div>
-        <div class="price-body">
-          <div class="price-label">Supply &amp; Install</div>
-          <div class="price-name">Bespoke / Matchboard Gate</div>
-          <p class="price-desc">Custom-made gate to match your fencing style. Tongue and groove or closeboard finish. Any size.</p>
-          <div class="price-from">
-            <span style="font-size:13px;color:var(--red);font-weight:600">from</span>
-            <span class="price-amount">&pound;350</span>
-            <span class="price-unit">per gate</span>
-          </div>
-        </div>
-      </div>
+      <div class="price-card rv" style="background:var(--white)"><div class="price-img"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&h=360&fit=crop" alt="Side gate"></div><div class="price-body"><div class="price-label">Supply &amp; Install</div><div class="price-name">Standard Side Gate</div><p class="price-desc">Framed, ledged and braced. Galvanised hinges and latch. Up to 6ft x 3ft.</p><div class="price-from"><span style="font-size:13px;color:var(--red);font-weight:600">from</span><span class="price-amount">&pound;250</span><span class="price-unit">per gate</span></div></div></div>
+      <div class="price-card rv" style="background:var(--white)"><div class="price-img"><img src="https://images.unsplash.com/photo-1594897030264-ab7d87efc473?w=600&h=360&fit=crop" alt="Double gates"></div><div class="price-body"><div class="price-label">Supply &amp; Install</div><div class="price-name">Double Driveway Gates</div><p class="price-desc">Pair of timber gates. Framed and braced, heavy-duty hinges. Bespoke sizes.</p><div class="price-from"><span style="font-size:13px;color:var(--red);font-weight:600">from</span><span class="price-amount">&pound;650</span><span class="price-unit">per pair</span></div></div></div>
+      <div class="price-card rv" style="background:var(--white)"><div class="price-img"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&h=360&fit=crop&sat=-80" alt="Bespoke gate"></div><div class="price-body"><div class="price-label">Supply &amp; Install</div><div class="price-name">Bespoke / Matchboard Gate</div><p class="price-desc">Custom-made to match your fencing. Tongue and groove or closeboard. Any size.</p><div class="price-from"><span style="font-size:13px;color:var(--red);font-weight:600">from</span><span class="price-amount">&pound;350</span><span class="price-unit">per gate</span></div></div></div>
     </div>
   </div>
 </section>
 
-<!-- DECKING -->
 <section class="section">
   <div class="ctr">
     <div class="sn rv">Decking</div>
     <h2 class="sh rv">Timber <em>decking.</em></h2>
-    <p class="s-intro rv" style="margin-bottom:0">All decking prices include subframe, joists, boards, fixings, steps (if needed) and labour.</p>
+    <p class="s-intro rv" style="margin-bottom:0">Includes subframe, joists, boards, fixings, steps if needed, and labour.</p>
     <div class="price-grid">
-      <div class="price-card rv">
-        <div class="price-img" style="position:relative">
-          <img src="https://images.unsplash.com/photo-1591825729269-caeb344f6df2?w=600&h=360&fit=crop" alt="Softwood timber decking">
-          <span class="price-popular">Most Popular</span>
-        </div>
-        <div class="price-body">
-          <div class="price-label">Supply &amp; Install</div>
-          <div class="price-name">Softwood Timber Decking</div>
-          <p class="price-desc">Pressure-treated softwood boards on a timber joist subframe. The standard, reliable option for most gardens.</p>
-          <div class="price-from">
-            <span style="font-size:13px;color:var(--red);font-weight:600">from</span>
-            <span class="price-amount">&pound;75</span>
-            <span class="price-unit">per m&sup2;</span>
-          </div>
-          <div class="price-note">Typical 15m&sup2; deck: ~&pound;1,125</div>
-        </div>
-      </div>
-      <div class="price-card rv">
-        <div class="price-img">
-          <img src="https://images.unsplash.com/photo-1591825729269-caeb344f6df2?w=600&h=360&fit=crop&sat=-50" alt="Hardwood decking">
-        </div>
-        <div class="price-body">
-          <div class="price-label">Supply &amp; Install</div>
-          <div class="price-name">Hardwood Decking</div>
-          <p class="price-desc">Premium hardwood boards for a longer-lasting, more refined finish. Ideal for high-use areas and entertaining spaces.</p>
-          <div class="price-from">
-            <span style="font-size:13px;color:var(--red);font-weight:600">from</span>
-            <span class="price-amount">&pound;120</span>
-            <span class="price-unit">per m&sup2;</span>
-          </div>
-          <div class="price-note">Typical 15m&sup2; deck: ~&pound;1,800</div>
-        </div>
-      </div>
-      <div class="price-card rv">
-        <div class="price-img">
-          <img src="https://images.unsplash.com/photo-1591825729269-caeb344f6df2?w=600&h=360&fit=crop&hue=30" alt="Deck steps and balustrade">
-        </div>
-        <div class="price-body">
-          <div class="price-label">Add-Ons</div>
-          <div class="price-name">Steps &amp; Balustrades</div>
-          <p class="price-desc">Timber steps with or without handrails. Balustrade/railing for raised decks. Building reg compliant.</p>
-          <div class="price-from">
-            <span style="font-size:13px;color:var(--red);font-weight:600">from</span>
-            <span class="price-amount">&pound;200</span>
-            <span class="price-unit">per flight</span>
-          </div>
-        </div>
-      </div>
+      <div class="price-card rv"><div class="price-img" style="position:relative"><img src="https://images.unsplash.com/photo-1591825729269-caeb344f6df2?w=600&h=360&fit=crop" alt="Softwood decking"><span class="price-popular">Most Popular</span></div><div class="price-body"><div class="price-label">Supply &amp; Install</div><div class="price-name">Softwood Timber Decking</div><p class="price-desc">Pressure-treated softwood on timber joist subframe. Standard reliable option.</p><div class="price-from"><span style="font-size:13px;color:var(--red);font-weight:600">from</span><span class="price-amount">&pound;75</span><span class="price-unit">per m&sup2;</span></div><div class="price-note">Typical 15m&sup2;: ~&pound;1,125</div></div></div>
+      <div class="price-card rv"><div class="price-img"><img src="https://images.unsplash.com/photo-1591825729269-caeb344f6df2?w=600&h=360&fit=crop&sat=-50" alt="Hardwood"></div><div class="price-body"><div class="price-label">Supply &amp; Install</div><div class="price-name">Hardwood Decking</div><p class="price-desc">Premium hardwood for longer-lasting, refined finish.</p><div class="price-from"><span style="font-size:13px;color:var(--red);font-weight:600">from</span><span class="price-amount">&pound;120</span><span class="price-unit">per m&sup2;</span></div><div class="price-note">Typical 15m&sup2;: ~&pound;1,800</div></div></div>
+      <div class="price-card rv"><div class="price-img"><img src="https://images.unsplash.com/photo-1591825729269-caeb344f6df2?w=600&h=360&fit=crop&hue=30" alt="Steps"></div><div class="price-body"><div class="price-label">Add-On</div><div class="price-name">Steps &amp; Balustrades</div><p class="price-desc">Timber steps with/without handrails. Building reg compliant.</p><div class="price-from"><span style="font-size:13px;color:var(--red);font-weight:600">from</span><span class="price-amount">&pound;200</span><span class="price-unit">per flight</span></div></div></div>
     </div>
   </div>
 </section>
 
-<!-- STRUCTURES -->
 <section class="section grey">
   <div class="ctr">
     <div class="sn rv">Structures</div>
     <h2 class="sh rv">Garden <em>structures.</em></h2>
     <div class="price-grid">
-      <div class="price-card rv" style="background:var(--white)">
-        <div class="price-img">
-          <img src="https://images.unsplash.com/photo-1598902108854-d1446677672c?w=600&h=360&fit=crop" alt="Timber pergola">
-        </div>
-        <div class="price-body">
-          <div class="price-label">Supply &amp; Install</div>
-          <div class="price-name">Timber Pergola</div>
-          <p class="price-desc">Freestanding or wall-mounted timber pergola. Pressure-treated softwood, bolted connections, concrete footings.</p>
-          <div class="price-from">
-            <span style="font-size:13px;color:var(--red);font-weight:600">from</span>
-            <span class="price-amount">&pound;800</span>
-            <span class="price-unit">per unit</span>
-          </div>
-          <div class="price-note">Based on 3m x 3m standard size</div>
-        </div>
-      </div>
-      <div class="price-card rv" style="background:var(--white)">
-        <div class="price-img">
-          <img src="https://images.unsplash.com/photo-1504148455328-c376907d081c?w=600&h=360&fit=crop" alt="Garden shed">
-        </div>
-        <div class="price-body">
-          <div class="price-label">Supply &amp; Install</div>
-          <div class="price-name">Garden Shed</div>
-          <p class="price-desc">Timber shed built on site. Pressure-treated frame, shiplap or featheredge cladding, felted roof. Base prep available.</p>
-          <div class="price-from">
-            <span style="font-size:13px;color:var(--red);font-weight:600">from</span>
-            <span class="price-amount">&pound;1,200</span>
-            <span class="price-unit">per unit</span>
-          </div>
-          <div class="price-note">Based on 8ft x 6ft standard size</div>
-        </div>
-      </div>
-      <div class="price-card rv" style="background:var(--white)">
-        <div class="price-img">
-          <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&h=360&fit=crop" alt="Raised beds">
-        </div>
-        <div class="price-body">
-          <div class="price-label">Supply &amp; Install</div>
-          <div class="price-name">Sleeper Raised Beds</div>
-          <p class="price-desc">Railway sleeper or softwood raised beds. Single or double height. Great for borders, veg gardens and tiered planting.</p>
-          <div class="price-from">
-            <span style="font-size:13px;color:var(--red);font-weight:600">from</span>
-            <span class="price-amount">&pound;250</span>
-            <span class="price-unit">per bed</span>
-          </div>
-          <div class="price-note">Based on 2.4m x 1.2m single height</div>
-        </div>
-      </div>
-      <div class="price-card rv" style="background:var(--white)">
-        <div class="price-img">
-          <img src="https://images.unsplash.com/photo-1598902108854-d1446677672c?w=600&h=360&fit=crop&sat=-60" alt="Screening and trellis">
-        </div>
-        <div class="price-body">
-          <div class="price-label">Supply &amp; Install</div>
-          <div class="price-name">Privacy Screening</div>
-          <p class="price-desc">Slatted timber screening for modern privacy without blocking light. Wall-mounted or freestanding.</p>
-          <div class="price-from">
-            <span style="font-size:13px;color:var(--red);font-weight:600">from</span>
-            <span class="price-amount">&pound;120</span>
-            <span class="price-unit">per metre</span>
-          </div>
-        </div>
-      </div>
-      <div class="price-card rv" style="background:var(--white)">
-        <div class="price-img">
-          <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&h=360&fit=crop" alt="Garden arch">
-        </div>
-        <div class="price-body">
-          <div class="price-label">Supply &amp; Install</div>
-          <div class="price-name">Garden Arch</div>
-          <p class="price-desc">Timber garden arch with optional trellis sides. Perfect for path entrances and climbing plants.</p>
-          <div class="price-from">
-            <span style="font-size:13px;color:var(--red);font-weight:600">from</span>
-            <span class="price-amount">&pound;350</span>
-            <span class="price-unit">per unit</span>
-          </div>
-        </div>
-      </div>
-      <div class="price-card rv" style="background:var(--white)">
-        <div class="price-img">
-          <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&h=360&fit=crop&sat=-80" alt="Log store">
-        </div>
-        <div class="price-body">
-          <div class="price-label">Supply &amp; Install</div>
-          <div class="price-name">Log Store</div>
-          <p class="price-desc">Open-fronted timber log store with slatted sides and felted roof. Keeps firewood dry and ventilated.</p>
-          <div class="price-from">
-            <span style="font-size:13px;color:var(--red);font-weight:600">from</span>
-            <span class="price-amount">&pound;300</span>
-            <span class="price-unit">per unit</span>
-          </div>
-        </div>
-      </div>
+      <div class="price-card rv" style="background:var(--white)"><div class="price-img"><img src="https://images.unsplash.com/photo-1598902108854-d1446677672c?w=600&h=360&fit=crop" alt="Pergola"></div><div class="price-body"><div class="price-label">Supply &amp; Install</div><div class="price-name">Timber Pergola</div><p class="price-desc">Freestanding or wall-mounted. Pressure-treated, bolted, concrete footings.</p><div class="price-from"><span style="font-size:13px;color:var(--red);font-weight:600">from</span><span class="price-amount">&pound;800</span><span class="price-unit">per unit</span></div><div class="price-note">Based on 3m x 3m</div></div></div>
+      <div class="price-card rv" style="background:var(--white)"><div class="price-img"><img src="https://images.unsplash.com/photo-1504148455328-c376907d081c?w=600&h=360&fit=crop" alt="Shed"></div><div class="price-body"><div class="price-label">Supply &amp; Install</div><div class="price-name">Garden Shed</div><p class="price-desc">Built on site. Pressure-treated frame, shiplap/featheredge cladding, felted roof.</p><div class="price-from"><span style="font-size:13px;color:var(--red);font-weight:600">from</span><span class="price-amount">&pound;1,200</span><span class="price-unit">per unit</span></div><div class="price-note">Based on 8ft x 6ft</div></div></div>
+      <div class="price-card rv" style="background:var(--white)"><div class="price-img"><img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&h=360&fit=crop" alt="Raised beds"></div><div class="price-body"><div class="price-label">Supply &amp; Install</div><div class="price-name">Sleeper Raised Beds</div><p class="price-desc">Railway sleeper or softwood. Single/double height.</p><div class="price-from"><span style="font-size:13px;color:var(--red);font-weight:600">from</span><span class="price-amount">&pound;250</span><span class="price-unit">per bed</span></div><div class="price-note">Based on 2.4m x 1.2m</div></div></div>
+      <div class="price-card rv" style="background:var(--white)"><div class="price-img"><img src="https://images.unsplash.com/photo-1598902108854-d1446677672c?w=600&h=360&fit=crop&sat=-60" alt="Screening"></div><div class="price-body"><div class="price-label">Supply &amp; Install</div><div class="price-name">Privacy Screening</div><p class="price-desc">Slatted timber screening. Wall-mounted or freestanding.</p><div class="price-from"><span style="font-size:13px;color:var(--red);font-weight:600">from</span><span class="price-amount">&pound;120</span><span class="price-unit">per metre</span></div></div></div>
+      <div class="price-card rv" style="background:var(--white)"><div class="price-img"><img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&h=360&fit=crop" alt="Arch"></div><div class="price-body"><div class="price-label">Supply &amp; Install</div><div class="price-name">Garden Arch</div><p class="price-desc">Timber arch with optional trellis sides.</p><div class="price-from"><span style="font-size:13px;color:var(--red);font-weight:600">from</span><span class="price-amount">&pound;350</span><span class="price-unit">per unit</span></div></div></div>
+      <div class="price-card rv" style="background:var(--white)"><div class="price-img"><img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&h=360&fit=crop&sat=-80" alt="Log store"></div><div class="price-body"><div class="price-label">Supply &amp; Install</div><div class="price-name">Log Store</div><p class="price-desc">Open-fronted, slatted sides, felted roof.</p><div class="price-from"><span style="font-size:13px;color:var(--red);font-weight:600">from</span><span class="price-amount">&pound;300</span><span class="price-unit">per unit</span></div></div></div>
     </div>
   </div>
 </section>
 
-<!-- DISCLAIMER & CTA -->
 <section class="section">
   <div class="ctr">
     <div class="disclaimer rv">
       <h3>About our pricing</h3>
-      <p style="margin-bottom:12px">All prices shown are starting "from" prices for standard installations with good access. Final pricing depends on the specific job — length, height, ground conditions, access and post type all affect the cost.</p>
-      <p style="margin-bottom:12px">Every quote we issue is <strong>itemised</strong> — you'll see exactly what you're paying for. No hidden charges, no surprise extras at the end of the job.</p>
-      <p>Prices include supply of all materials, installation labour, and removal/disposal of your old fence or structure. <strong>VAT is included</strong> in all prices shown.</p>
+      <p style="margin-bottom:12px">All prices are starting "from" prices for standard installations with good access. Final pricing depends on length, height, ground conditions, access and post type.</p>
+      <p style="margin-bottom:12px">Every quote is <strong>itemised</strong> — you see exactly what you're paying for. No hidden charges.</p>
+      <p>Prices include materials, labour, and removal/disposal. <strong>VAT included</strong>.</p>
     </div>
-
     <div style="text-align:center;margin-top:60px" class="rv">
       <h2 class="sh">Want an exact <em>price?</em></h2>
-      <p class="s-intro" style="max-width:440px;margin:0 auto 28px">Send us the details — measurements, photos, postcode — and we'll get you a clear quote the same day.</p>
+      <p class="s-intro" style="max-width:440px;margin:0 auto 28px">Send us measurements, photos, postcode — clear quote same day.</p>
       <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
         <a href="contact.html" class="btn-b">Get a Free Quote <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></a>
         <a href="tel:08000000000" class="btn-o">Call Us</a>
@@ -475,7 +374,6 @@
   </div>
 </section>
 
-<!-- CTA BAND & FOOTER -->
 <div class="cta-band">
   <h2>Ready to get <em>started?</em></h2>
   <p>Tell us what you need. Free quote, same-day response, no obligation.</p>
@@ -495,10 +393,10 @@
       <div>
         <div class="ftr-col-t">Services</div>
         <ul class="ftr-links">
-          <li><a href="services/fencing.html">Closeboard Fencing</a></li>
-          <li><a href="services/decking.html">Timber Decking</a></li>
-          <li><a href="services/structures.html">Garden Structures</a></li>
-          <li><a href="services/repairs.html">Repairs</a></li>
+          <li><a href="fencing.html">Closeboard Fencing</a></li>
+          <li><a href="decking.html">Timber Decking</a></li>
+          <li><a href="structures.html">Garden Structures</a></li>
+          <li><a href="repairs.html">Repairs</a></li>
           <li><a href="commercial.html">Commercial Work</a></li>
         </ul>
       </div>
@@ -520,7 +418,7 @@
           <li><a href="mailto:hello@solidgrain.co.uk">hello@solidgrain.co.uk</a></li>
           <li><a href="#">WhatsApp Us</a></li>
         </ul>
-        <div style="margin-top:14px;font-size:11px;color:var(--g5)">Mon–Fri 7am–6pm<br>Sat 8am–4pm</div>
+        <div style="margin-top:14px;font-size:11px;color:var(--g5)">Mon-Fri 7am-6pm<br>Sat 8am-4pm</div>
       </div>
     </div>
     <div class="ftr-bot">
@@ -532,6 +430,34 @@
     </div>
   </div>
 </footer>
-<script src="js/main.js"></script>
+<script>
+/* SOLID GRAIN — Shared JS */
+function toggleMobileNav(){document.getElementById('mobileNav').classList.toggle('open')}
+function closeMobileNav(){document.getElementById('mobileNav').classList.remove('open')}
+
+/* Scroll reveal */
+document.addEventListener('DOMContentLoaded',function(){
+  var obs=new IntersectionObserver(function(e){e.forEach(function(en){if(en.isIntersecting){en.target.classList.add('vis');obs.unobserve(en.target)}})},{threshold:.08});
+  document.querySelectorAll('.rv').forEach(function(el){obs.observe(el)});
+
+  /* FAQ toggle */
+  document.querySelectorAll('.faq-q').forEach(function(q){
+    q.addEventListener('click',function(){
+      this.closest('.faq-item').classList.toggle('open');
+    });
+  });
+});
+
+/* Form submit (Formspree fallback) */
+function handleSubmit(e){
+  e.preventDefault();
+  var b=e.target.querySelector('.fbtn');
+  b.textContent="Sent — we'll be in touch shortly.";
+  b.style.background='#D14836';
+  b.disabled=true;
+  setTimeout(function(){b.textContent='Send Quote Request';b.style.background='';b.disabled=false;e.target.reset()},4000);
+}
+
+</script>
 </body>
 </html>

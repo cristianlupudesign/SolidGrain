@@ -4,12 +4,220 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Home — Solid Grain</title>
-<meta name="description" content="Solid Grain — closeboard fencing, timber decking and garden structures across London. Quality timber, clean finish, no shortcuts.">
+<meta name="description" content="Solid Grain — closeboard fencing, timber decking and garden structures across London.">
 <meta name="theme-color" content="#000000">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+<style>
+/* ═══════════════════════════════════════════════════════
+   SOLID GRAIN — SHARED STYLESHEET
+   Pentagram style: Black · White · Red · Flat · Utilitarian
+   ═══════════════════════════════════════════════════════ */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--black:#000;--white:#FFF;--red:#D14836;--g1:#111;--g2:#1A1A1A;--g3:#333;--g4:#666;--g5:#999;--g6:#E5E5E5;--g7:#F5F5F5;--font:'Instrument Sans',sans-serif;--mw:1320px;--hh:60px}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);font-weight:400;color:var(--black);background:var(--white);line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}ul{list-style:none}img{max-width:100%;display:block}
+::selection{background:var(--red);color:var(--white)}
+.ctr{max-width:var(--mw);margin:0 auto;padding:0 32px}
+
+/* ── HEADER ── */
+.hdr{position:fixed;top:0;left:0;right:0;z-index:1000;height:var(--hh);background:var(--white);border-bottom:1px solid var(--black)}
+.hdr-in{max-width:var(--mw);margin:0 auto;padding:0 32px;height:100%;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:15px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}.logo span{color:var(--red)}
+.nav{display:flex;align-items:center;gap:24px}
+.nav a{font-size:13px;font-weight:500;letter-spacing:.04em;color:var(--g4);transition:color .2s;position:relative}.nav a:hover,.nav a.active{color:var(--black)}
+.nav a.active::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:1px;background:var(--red)}
+.nav-q{color:var(--white)!important;background:var(--black);padding:8px 20px;font-weight:600;transition:background .2s}.nav-q:hover{background:var(--red)}.nav-q.active::after{display:none}
+/* Dropdown */
+.nav-drop{position:relative}
+.nav-drop:hover .drop-menu{display:block}
+.drop-menu{display:none;position:absolute;top:100%;left:-12px;background:var(--white);border:1px solid var(--black);min-width:200px;padding:8px 0;z-index:100}
+.drop-menu a{display:block;padding:8px 16px;font-size:12px;font-weight:500;letter-spacing:.04em;color:var(--g4);transition:all .15s}.drop-menu a:hover{background:var(--g7);color:var(--black)}
+.drop-menu a.active::after{display:none}
+/* Burger */
+.burger{display:none;background:0 0;border:0;cursor:pointer;padding:6px}.burger svg{display:block}
+.mnav{display:none;position:fixed;top:var(--hh);left:0;right:0;bottom:0;background:var(--white);z-index:999;padding:32px;border-top:1px solid var(--black);overflow-y:auto}
+.mnav.open{display:flex;flex-direction:column}
+.mnav a{font-size:24px;font-weight:700;letter-spacing:-.02em;padding:14px 0;border-bottom:1px solid var(--g6);color:var(--black)}.mnav a:last-child{border-bottom:0}.mnav a:hover{color:var(--red)}
+.mnav-sub{padding-left:20px}.mnav-sub a{font-size:16px;font-weight:500;color:var(--g4)}
+@media(max-width:900px){.nav{display:none}.burger{display:block}}
+
+/* ── BUTTONS ── */
+.btn-b{display:inline-flex;align-items:center;gap:10px;font-size:14px;font-weight:600;letter-spacing:.04em;color:var(--white);background:var(--black);padding:14px 32px;transition:background .2s;border:0;cursor:pointer;font-family:var(--font)}.btn-b:hover{background:var(--red)}
+.btn-b svg{transition:transform .2s}.btn-b:hover svg{transform:translateX(4px)}
+.btn-o{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;letter-spacing:.04em;color:var(--black);background:0 0;padding:14px 28px;border:1px solid var(--black);transition:all .2s;cursor:pointer;font-family:var(--font)}.btn-o:hover{background:var(--black);color:var(--white)}
+.btn-r{display:inline-flex;align-items:center;gap:10px;font-size:14px;font-weight:600;letter-spacing:.04em;color:var(--white);background:var(--red);padding:14px 32px;transition:background .2s;border:0;cursor:pointer;font-family:var(--font)}.btn-r:hover{background:var(--black)}
+
+/* ── SECTION GLOBALS ── */
+.sn{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--g5);margin-bottom:12px}
+.sh{font-size:clamp(36px,5vw,64px);font-weight:700;line-height:.95;letter-spacing:-.03em;margin-bottom:24px}.sh em{font-style:normal;color:var(--red)}
+.s-intro{font-size:16px;color:var(--g4);max-width:540px;line-height:1.65}
+
+/* ── PAGE HERO (inner pages) ── */
+.page-hero{padding:calc(var(--hh) + 80px) 0 80px;border-bottom:1px solid var(--black)}
+.page-hero.dark{background:var(--black);color:var(--white)}
+.page-hero.dark .sn{color:var(--g4)}
+.page-hero.dark .sh{color:var(--white)}
+.page-hero.dark .s-intro{color:var(--g5)}
+.page-hero-split{display:grid;grid-template-columns:1fr 1fr;gap:0;min-height:480px}
+.page-hero-split .ph-text{padding:calc(var(--hh) + 60px) 48px 60px;display:flex;flex-direction:column;justify-content:flex-end}
+.page-hero-split .ph-img{position:relative;overflow:hidden;border-left:1px solid var(--black)}.page-hero-split .ph-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+@media(max-width:768px){.page-hero-split{grid-template-columns:1fr}.page-hero-split .ph-img{min-height:300px;border-left:0;border-top:1px solid var(--black)}}
+
+/* ── TICKER ── */
+.tick{background:var(--black);overflow:hidden;padding:14px 0;border-bottom:1px solid var(--g3)}
+.tick-tr{display:flex;animation:scr 20s linear infinite;width:max-content}
+.tick-i{font-size:13px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--white);white-space:nowrap;padding:0 32px}
+.tick-d{color:var(--red);padding:0 8px}
+@keyframes scr{from{transform:translateX(0)}to{transform:translateX(-33.333%)}}
+
+/* ── CONTENT SECTIONS ── */
+.section{padding:100px 0;border-bottom:1px solid var(--black)}
+.section.dark{background:var(--black);color:var(--white)}
+.section.dark .sn{color:var(--g4)}
+.section.dark .sh{color:var(--white)}
+.section.dark .s-intro{color:var(--g5)}
+.section.grey{background:var(--g7)}
+.section.no-border{border-bottom:0}
+
+/* ── GRID LAYOUTS ── */
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+@media(max-width:900px){.grid-2{grid-template-columns:1fr}.grid-3{grid-template-columns:1fr 1fr}.grid-4{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.grid-3,.grid-4{grid-template-columns:1fr}}
+
+/* ── CARDS ── */
+.card{border:1px solid var(--g6);transition:transform .3s,box-shadow .3s}
+.card:hover{transform:translateY(-3px);box-shadow:0 8px 30px rgba(0,0,0,.06)}
+.card-img{height:240px;overflow:hidden;position:relative;background:var(--g7)}.card-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}.card:hover .card-img img{transform:scale(1.04)}
+.card-body{padding:28px 24px}
+.card-tag{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--red);margin-bottom:8px}
+.card-title{font-size:20px;font-weight:700;letter-spacing:-.02em;line-height:1.2;margin-bottom:8px}
+.card-text{font-size:14px;color:var(--g4);line-height:1.6}
+.card-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--black);margin-top:16px;transition:color .2s}.card-link:hover{color:var(--red)}
+.card-link svg{transition:transform .2s}.card-link:hover svg{transform:translateX(4px)}
+
+/* ── IMAGE BAND ── */
+.img-band{height:50vh;min-height:360px;max-height:540px;overflow:hidden;position:relative;border-bottom:1px solid var(--black)}
+.img-band img{width:100%;height:100%;object-fit:cover}
+.img-band-ov{position:absolute;inset:0;background:rgba(0,0,0,.4);display:flex;align-items:center;justify-content:center}
+.img-band-tx{color:var(--white);text-align:center;padding:20px}
+.img-band-tx h2{font-size:clamp(28px,4vw,52px);font-weight:700;line-height:.95;letter-spacing:-.03em}.img-band-tx h2 em{font-style:normal;color:var(--red)}
+.img-band-tx p{font-size:15px;color:rgba(255,255,255,.65);margin-top:14px;max-width:400px;margin-left:auto;margin-right:auto;line-height:1.6}
+
+/* ── GALLERY GRID ── */
+.gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:4px}
+@media(max-width:768px){.gal-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.gal-grid{grid-template-columns:1fr}}
+.gal-cell{overflow:hidden;position:relative;height:280px}
+.gal-cell img{width:100%;height:100%;object-fit:cover;transition:transform .5s}.gal-cell:hover img{transform:scale(1.05)}
+.gal-cell.tall{grid-row:span 2;height:auto}
+.gal-label{position:absolute;bottom:12px;left:12px;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--white);background:rgba(0,0,0,.6);padding:4px 10px;backdrop-filter:blur(4px)}
+
+/* ── SPLIT SECTION ── */
+.split{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--black)}
+@media(max-width:768px){.split{grid-template-columns:1fr}}
+.split-dark{background:var(--black);padding:80px 48px;display:flex;flex-direction:column;justify-content:center}
+.split-dark .sn{color:var(--g4)}
+.split-light{background:var(--white);padding:80px 48px;display:flex;flex-direction:column;justify-content:center}
+
+/* ── WHY ITEMS ── */
+.why-i{display:flex;gap:20px;align-items:flex-start;margin-bottom:32px}
+.why-i:last-child{margin-bottom:0}
+.why-mk{width:28px;height:2px;background:var(--red);margin-top:10px;flex-shrink:0}
+.why-it{font-size:16px;font-weight:700;letter-spacing:-.01em;margin-bottom:4px}
+.why-tx{font-size:14px;color:var(--g4);line-height:1.6}
+
+/* ── PROCESS STEPS ── */
+.prc-g{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+@media(max-width:768px){.prc-g{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.prc-g{grid-template-columns:1fr}}
+.prc-s{padding:40px 28px;border-left:1px solid var(--g6)}.prc-s:first-child{border-left:1px solid var(--black)}
+.prc-nm{font-size:64px;font-weight:700;letter-spacing:-.04em;color:var(--g6);line-height:1;margin-bottom:20px}.prc-s:hover .prc-nm{color:var(--red)}
+.prc-ti{font-size:18px;font-weight:700;letter-spacing:-.01em;margin-bottom:8px}
+.prc-tx{font-size:14px;color:var(--g4);line-height:1.6}
+
+/* ── REVIEWS ── */
+.rev-card{padding:36px 28px;border-left:1px solid var(--g6)}
+.rev-card:first-child{border-left:1px solid var(--black)}
+.rev-st{font-size:14px;color:var(--red);letter-spacing:2px;margin-bottom:16px}
+.rev-tx{font-size:15px;line-height:1.65;margin-bottom:20px;font-style:italic}
+.rev-au{font-size:13px;font-weight:700;letter-spacing:.04em}
+.rev-lo{font-size:12px;color:var(--g5);margin-top:2px}
+.rev-svc{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--red);margin-top:8px}
+
+/* ── AREA TAGS ── */
+.area-t{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:8px 16px;border:1px solid var(--g6);color:var(--g4);transition:all .2s;display:inline-block;margin:0 6px 6px 0}
+.area-t:hover{border-color:var(--black);color:var(--black);background:var(--g7)}
+
+/* ── FAQ ── */
+.faq-item{border-bottom:1px solid var(--g6);padding:24px 0}
+.faq-q{font-size:17px;font-weight:700;letter-spacing:-.01em;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.faq-q svg{flex-shrink:0;transition:transform .3s}
+.faq-item.open .faq-q svg{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s;font-size:15px;color:var(--g4);line-height:1.65}
+.faq-item.open .faq-a{max-height:500px;padding-top:16px}
+
+/* ── CONTACT FORM ── */
+.fr{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+@media(max-width:480px){.fr{grid-template-columns:1fr}}
+.fg{margin-bottom:16px}
+.fl{display:block;font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--g5);margin-bottom:6px}
+.fi,.fsel,.fta{width:100%;padding:12px 0;background:0 0;border:0;border-bottom:1px solid var(--g6);color:var(--black);font-family:var(--font);font-size:15px;font-weight:500;outline:0;transition:border-color .2s;border-radius:0;-webkit-appearance:none}
+.fi:focus,.fsel:focus,.fta:focus{border-color:var(--black)}
+.fta{min-height:80px;resize:vertical;border:1px solid var(--g6);padding:12px;margin-top:4px}.fta:focus{border-color:var(--black)}
+.fsel{cursor:pointer;color:var(--g4)}
+.fbtn{width:100%;padding:16px;background:var(--black);color:var(--white);font-family:var(--font);font-size:14px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;border:0;cursor:pointer;transition:background .2s;margin-top:8px}.fbtn:hover{background:var(--red)}
+.fnote{font-size:12px;color:var(--g5);margin-top:12px}
+/* White form variant */
+.form-white .fi,.form-white .fsel,.form-white .fta{border-color:var(--g3);color:var(--white)}
+.form-white .fi:focus,.form-white .fsel:focus,.form-white .fta:focus{border-color:var(--red)}
+.form-white .fl{color:var(--g5)}
+.form-white .fsel{color:var(--g5)}
+
+/* ── STAT BLOCKS ── */
+.stat{text-align:center;padding:32px 20px}
+.stat-num{font-size:48px;font-weight:700;letter-spacing:-.04em;line-height:1;color:var(--red)}
+.stat-label{font-size:13px;font-weight:500;color:var(--g4);margin-top:8px}
+
+/* ── BLOG ── */
+.blog-card .card-date{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--g5);margin-bottom:8px}
+.blog-card .card-excerpt{font-size:14px;color:var(--g4);line-height:1.6;margin-top:8px}
+
+/* ── FOOTER ── */
+.ftr{background:var(--black);padding:60px 0 28px;border-top:1px solid var(--black)}
+.ftr-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px}
+@media(max-width:768px){.ftr-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.ftr-grid{grid-template-columns:1fr}}
+.ftr-b{font-size:15px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--white)}.ftr-b span{color:var(--red)}
+.ftr-desc{font-size:13px;color:var(--g4);line-height:1.6;margin-top:12px;max-width:280px}
+.ftr-reg{font-size:11px;color:var(--g5);margin-top:14px}
+.ftr-col-t{font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--g5);margin-bottom:14px}
+.ftr-links li{margin-bottom:8px}.ftr-links a{font-size:13px;color:var(--g4);transition:color .2s}.ftr-links a:hover{color:var(--red)}
+.ftr-bot{margin-top:48px;padding-top:20px;border-top:1px solid var(--g3);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.ftr-cp{font-size:12px;color:var(--g5)}
+.ftr-legal{display:flex;gap:20px}.ftr-legal a{font-size:12px;color:var(--g5);transition:color .2s}.ftr-legal a:hover{color:var(--red)}
+
+/* ── CTA BAND ── */
+.cta-band{background:var(--black);padding:80px 0;text-align:center;border-bottom:1px solid var(--g3)}
+.cta-band h2{font-size:clamp(28px,4vw,48px);font-weight:700;line-height:.95;letter-spacing:-.03em;color:var(--white);margin-bottom:16px}
+.cta-band h2 em{font-style:normal;color:var(--red)}
+.cta-band p{font-size:15px;color:var(--g4);margin-bottom:28px;max-width:400px;margin-left:auto;margin-right:auto;line-height:1.6}
+.cta-band .btn-group{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+/* ── REVEAL ── */
+.rv{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}.rv.vis{opacity:1;transform:translateY(0)}
+
+/* ── BREADCRUMB ── */
+.bread{padding-top:calc(var(--hh) + 20px);padding-bottom:0;font-size:12px;color:var(--g5);display:flex;align-items:center;gap:6px}
+.bread a{color:var(--g5);transition:color .2s}.bread a:hover{color:var(--black)}
+.bread-sep{color:var(--g6)}
+
+
+</style>
 </head>
 <body>
 <header class="hdr">
@@ -20,17 +228,16 @@
       <div class="nav-drop">
         <a href="services.html">Services</a>
         <div class="drop-menu">
-          <a href="services/fencing.html">Closeboard Fencing</a>
-          <a href="services/decking.html">Timber Decking</a>
-          <a href="services/structures.html">Garden Structures</a>
-          <a href="services/repairs.html">Repairs &amp; Maintenance</a>
+          <a href="fencing.html">Closeboard Fencing</a>
+          <a href="decking.html">Timber Decking</a>
+          <a href="structures.html">Garden Structures</a>
+          <a href="repairs.html">Repairs &amp; Maintenance</a>
         </div>
       </div>
       <a href="gallery.html">Work</a>
       <a href="pricing.html">Pricing</a>
       <a href="commercial.html">Commercial</a>
       <a href="reviews.html">Reviews</a>
-      <a href="blog.html">Blog</a>
       <a href="contact.html" class="nav-q">Get a Quote</a>
     </nav>
     <button class="burger" onclick="toggleMobileNav()" aria-label="Menu">
@@ -43,10 +250,10 @@
   <a href="about.html" onclick="closeMobileNav()">About</a>
   <a href="services.html" onclick="closeMobileNav()">Services</a>
   <div class="mnav-sub">
-    <a href="services/fencing.html" onclick="closeMobileNav()">Closeboard Fencing</a>
-    <a href="services/decking.html" onclick="closeMobileNav()">Timber Decking</a>
-    <a href="services/structures.html" onclick="closeMobileNav()">Garden Structures</a>
-    <a href="services/repairs.html" onclick="closeMobileNav()">Repairs</a>
+    <a href="fencing.html" onclick="closeMobileNav()">Closeboard Fencing</a>
+    <a href="decking.html" onclick="closeMobileNav()">Timber Decking</a>
+    <a href="structures.html" onclick="closeMobileNav()">Garden Structures</a>
+    <a href="repairs.html" onclick="closeMobileNav()">Repairs</a>
   </div>
   <a href="gallery.html" onclick="closeMobileNav()">Our Work</a>
   <a href="pricing.html" onclick="closeMobileNav()">Pricing</a>
@@ -73,84 +280,60 @@
       <span style="font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--g5);display:flex;align-items:center;gap:6px"><span style="width:6px;height:6px;background:var(--red);border-radius:50%;display:inline-block"></span>Same-Day Response</span>
     </div>
   </div>
-  <div class="ph-img">
-    <!-- REPLACE: Your hero image -->
-    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=900&h=1200&fit=crop" alt="Timber fence detail">
-  </div>
+  <div class="ph-img"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=900&h=1200&fit=crop" alt="Timber fence detail"></div>
 </section>
-
 <div class="tick"><div class="tick-tr">
   <span class="tick-i">Closeboard Fencing <span class="tick-d">&middot;</span> Timber Decking <span class="tick-d">&middot;</span> Garden Structures <span class="tick-d">&middot;</span> Gates <span class="tick-d">&middot;</span> Repairs <span class="tick-d">&middot;</span> Fully Insured <span class="tick-d">&middot;</span> Free Quotes <span class="tick-d">&middot;</span> Same-Day Response <span class="tick-d">&middot;</span>&nbsp;</span>
   <span class="tick-i">Closeboard Fencing <span class="tick-d">&middot;</span> Timber Decking <span class="tick-d">&middot;</span> Garden Structures <span class="tick-d">&middot;</span> Gates <span class="tick-d">&middot;</span> Repairs <span class="tick-d">&middot;</span> Fully Insured <span class="tick-d">&middot;</span> Free Quotes <span class="tick-d">&middot;</span> Same-Day Response <span class="tick-d">&middot;</span>&nbsp;</span>
   <span class="tick-i">Closeboard Fencing <span class="tick-d">&middot;</span> Timber Decking <span class="tick-d">&middot;</span> Garden Structures <span class="tick-d">&middot;</span> Gates <span class="tick-d">&middot;</span> Repairs <span class="tick-d">&middot;</span> Fully Insured <span class="tick-d">&middot;</span> Free Quotes <span class="tick-d">&middot;</span> Same-Day Response <span class="tick-d">&middot;</span>&nbsp;</span>
 </div></div>
-
 <section class="section">
   <div class="ctr">
     <div class="sn rv">Services</div>
     <h2 class="sh rv">What we <em>do.</em></h2>
     <p class="s-intro rv" style="margin-bottom:48px">Everything timber, outdoors, built properly.</p>
     <div class="grid-4">
-      <a href="services/fencing.html" class="card rv">
-        <div class="card-img"><img src="https://images.unsplash.com/photo-1594897030264-ab7d87efc473?w=600&h=400&fit=crop" alt="Closeboard fencing"></div>
-        <div class="card-body"><div class="card-tag">01</div><div class="card-title">Closeboard Fencing</div><p class="card-text">The strongest, longest-lasting fence type. New installs and replacements.</p><span class="card-link">Learn more <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span></div>
-      </a>
-      <a href="services/decking.html" class="card rv">
-        <div class="card-img"><img src="https://images.unsplash.com/photo-1591825729269-caeb344f6df2?w=600&h=400&fit=crop" alt="Timber decking"></div>
-        <div class="card-body"><div class="card-tag">02</div><div class="card-title">Timber Decking</div><p class="card-text">Pressure-treated decking. Ground-level, raised, steps and balustrades.</p><span class="card-link">Learn more <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span></div>
-      </a>
-      <a href="services/structures.html" class="card rv">
-        <div class="card-img"><img src="https://images.unsplash.com/photo-1598902108854-d1446677672c?w=600&h=400&fit=crop" alt="Garden structures"></div>
-        <div class="card-body"><div class="card-tag">03</div><div class="card-title">Garden Structures</div><p class="card-text">Sheds, pergolas, trellis and raised beds. Built on site to your spec.</p><span class="card-link">Learn more <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span></div>
-      </a>
-      <a href="services/repairs.html" class="card rv">
-        <div class="card-img"><img src="https://images.unsplash.com/photo-1504148455328-c376907d081c?w=600&h=400&fit=crop" alt="Repairs"></div>
-        <div class="card-body"><div class="card-tag">04</div><div class="card-title">Repairs</div><p class="card-text">Storm damage, post replacements and emergency call-outs.</p><span class="card-link">Learn more <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span></div>
-      </a>
+      <a href="fencing.html" class="card rv"><div class="card-img"><img src="https://images.unsplash.com/photo-1594897030264-ab7d87efc473?w=600&h=400&fit=crop" alt="Closeboard fencing"></div><div class="card-body"><div class="card-tag">01</div><div class="card-title">Closeboard Fencing</div><p class="card-text">The strongest, longest-lasting fence type. New installs and replacements.</p><span class="card-link">Learn more <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span></div></a>
+      <a href="decking.html" class="card rv"><div class="card-img"><img src="https://images.unsplash.com/photo-1591825729269-caeb344f6df2?w=600&h=400&fit=crop" alt="Timber decking"></div><div class="card-body"><div class="card-tag">02</div><div class="card-title">Timber Decking</div><p class="card-text">Pressure-treated decking. Ground-level, raised, steps and balustrades.</p><span class="card-link">Learn more <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span></div></a>
+      <a href="structures.html" class="card rv"><div class="card-img"><img src="https://images.unsplash.com/photo-1598902108854-d1446677672c?w=600&h=400&fit=crop" alt="Garden structures"></div><div class="card-body"><div class="card-tag">03</div><div class="card-title">Garden Structures</div><p class="card-text">Sheds, pergolas, trellis and raised beds. Built on site to your spec.</p><span class="card-link">Learn more <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span></div></a>
+      <a href="repairs.html" class="card rv"><div class="card-img"><img src="https://images.unsplash.com/photo-1504148455328-c376907d081c?w=600&h=400&fit=crop" alt="Repairs"></div><div class="card-body"><div class="card-tag">04</div><div class="card-title">Repairs</div><p class="card-text">Storm damage, post replacements and emergency call-outs.</p><span class="card-link">Learn more <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span></div></a>
     </div>
   </div>
 </section>
-
-<div class="img-band">
-  <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1600&h=700&fit=crop" alt="Garden with timber fencing">
-  <div class="img-band-ov"><div class="img-band-tx"><h2>Quality timber.<br><em>No shortcuts.</em></h2><p>Pressure-treated on every job. It resists rot, lasts longer and looks better.</p></div></div>
-</div>
-
+<div class="img-band"><img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1600&h=700&fit=crop" alt="Garden"><div class="img-band-ov"><div class="img-band-tx"><h2>Quality timber.<br><em>No shortcuts.</em></h2><p>Pressure-treated on every job.</p></div></div></div>
 <div class="split">
   <div class="split-dark">
     <div class="sn">About</div>
     <h2 style="font-size:clamp(28px,3.5vw,44px);font-weight:700;line-height:1.1;letter-spacing:-.02em;color:var(--white);margin-bottom:28px" class="rv">Every job gets the same attention — whether it's <em style="font-style:normal;color:var(--red)">3 panels or 300.</em></h2>
-    <p style="font-size:13px;color:var(--g4);line-height:1.6">We're a small team and we intend to keep it that way. Every job is done by people who care about the work.</p>
+    <p style="font-size:13px;color:var(--g4);line-height:1.6">We're a small team and we intend to keep it that way.</p>
     <div style="margin-top:28px"><a href="about.html" class="btn-b">Our Mission <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></a></div>
   </div>
   <div class="split-light" style="gap:32px">
     <div class="why-i rv"><div class="why-mk"></div><div><div class="why-it">Fully Insured</div><div class="why-tx">&pound;2 million public liability on every job.</div></div></div>
-    <div class="why-i rv"><div class="why-mk"></div><div><div class="why-it">Free Same-Day Quotes</div><div class="why-tx">No obligation, no hard sell. We respond the same day.</div></div></div>
+    <div class="why-i rv"><div class="why-mk"></div><div><div class="why-it">Free Same-Day Quotes</div><div class="why-tx">No obligation, no hard sell.</div></div></div>
     <div class="why-i rv"><div class="why-mk"></div><div><div class="why-it">Quality Timber Only</div><div class="why-tx">Pressure-treated on every job. No cheap materials.</div></div></div>
     <div class="why-i rv"><div class="why-mk"></div><div><div class="why-it">We Clean Up</div><div class="why-tx">All old timber removed. You just see the finished job.</div></div></div>
   </div>
 </div>
-
 <section class="section grey">
   <div class="ctr">
     <div class="sn rv">Reviews</div>
     <h2 class="sh rv">Trusted by <em>Londoners.</em></h2>
     <div class="grid-3" style="margin-top:40px">
-      <div class="rev-card rv"><div class="rev-st">&starf; &starf; &starf; &starf; &starf;</div><p class="rev-tx">"Had 12 panels replaced after the January storms. The team arrived on time, cleared everything and left a solid, straight fence."</p><div class="rev-au">James R.</div><div class="rev-lo">Ealing, West London</div></div>
-      <div class="rev-card rv"><div class="rev-st">&starf; &starf; &starf; &starf; &starf;</div><p class="rev-tx">"Closeboard fence with a gate, delivered exactly what was quoted. Tidy work, fair price, no messing about."</p><div class="rev-au">Sarah T.</div><div class="rev-lo">Ruislip, Hillingdon</div></div>
-      <div class="rev-card rv"><div class="rev-st">&starf; &starf; &starf; &starf; &starf;</div><p class="rev-tx">"Quality timber, properly built decking, and they cleaned up after themselves. Rare to find tradespeople who do that."</p><div class="rev-au">David &amp; Claire M.</div><div class="rev-lo">Uxbridge, West London</div></div>
+      <div class="rev-card rv"><div class="rev-st">&starf; &starf; &starf; &starf; &starf;</div><p class="rev-tx">"Had 12 panels replaced after the January storms. Arrived on time, left a solid, straight fence."</p><div class="rev-au">James R.</div><div class="rev-lo">Ealing, West London</div></div>
+      <div class="rev-card rv"><div class="rev-st">&starf; &starf; &starf; &starf; &starf;</div><p class="rev-tx">"Closeboard fence with a gate, delivered exactly what was quoted. Tidy work, fair price."</p><div class="rev-au">Sarah T.</div><div class="rev-lo">Ruislip, Hillingdon</div></div>
+      <div class="rev-card rv"><div class="rev-st">&starf; &starf; &starf; &starf; &starf;</div><p class="rev-tx">"Quality timber, properly built decking, and they cleaned up after themselves."</p><div class="rev-au">David &amp; Claire M.</div><div class="rev-lo">Uxbridge, West London</div></div>
     </div>
     <div style="text-align:center;margin-top:36px"><a href="reviews.html" class="btn-o">All Reviews <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></a></div>
   </div>
 </section>
-
 <section class="section">
   <div class="ctr">
     <div class="grid-2">
       <div>
         <div class="sn rv">Commercial</div>
         <h2 class="sh rv">We work with <em>businesses.</em></h2>
-        <p class="s-intro rv">Property developers, landlords, housing associations and estate managers. Bulk pricing, scheduled maintenance, and priority response.</p>
+        <p class="s-intro rv">Property developers, landlords, housing associations. Bulk pricing, priority response.</p>
         <div style="margin-top:28px"><a href="commercial.html" class="btn-o rv">Commercial Services <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></a></div>
       </div>
       <div class="rv" style="display:flex;flex-wrap:wrap;gap:16px;align-content:center">
@@ -182,10 +365,10 @@
       <div>
         <div class="ftr-col-t">Services</div>
         <ul class="ftr-links">
-          <li><a href="services/fencing.html">Closeboard Fencing</a></li>
-          <li><a href="services/decking.html">Timber Decking</a></li>
-          <li><a href="services/structures.html">Garden Structures</a></li>
-          <li><a href="services/repairs.html">Repairs</a></li>
+          <li><a href="fencing.html">Closeboard Fencing</a></li>
+          <li><a href="decking.html">Timber Decking</a></li>
+          <li><a href="structures.html">Garden Structures</a></li>
+          <li><a href="repairs.html">Repairs</a></li>
           <li><a href="commercial.html">Commercial Work</a></li>
         </ul>
       </div>
@@ -193,8 +376,7 @@
         <div class="ftr-col-t">Company</div>
         <ul class="ftr-links">
           <li><a href="about.html">Our Mission</a></li>
-          <li><a href="gallery.html">Our Work</a>
-  <a href="pricing.html" onclick="closeMobileNav()">Pricing</a></li>
+          <li><a href="gallery.html">Our Work</a></li>
           <li><a href="reviews.html">Reviews</a></li>
           <li><a href="areas.html">Areas Covered</a></li>
           <li><a href="faq.html">FAQs</a></li>
@@ -208,7 +390,7 @@
           <li><a href="mailto:hello@solidgrain.co.uk">hello@solidgrain.co.uk</a></li>
           <li><a href="#">WhatsApp Us</a></li>
         </ul>
-        <div style="margin-top:14px;font-size:11px;color:var(--g5)">Mon–Fri 7am–6pm<br>Sat 8am–4pm</div>
+        <div style="margin-top:14px;font-size:11px;color:var(--g5)">Mon-Fri 7am-6pm<br>Sat 8am-4pm</div>
       </div>
     </div>
     <div class="ftr-bot">
@@ -220,6 +402,34 @@
     </div>
   </div>
 </footer>
-<script src="js/main.js"></script>
+<script>
+/* SOLID GRAIN — Shared JS */
+function toggleMobileNav(){document.getElementById('mobileNav').classList.toggle('open')}
+function closeMobileNav(){document.getElementById('mobileNav').classList.remove('open')}
+
+/* Scroll reveal */
+document.addEventListener('DOMContentLoaded',function(){
+  var obs=new IntersectionObserver(function(e){e.forEach(function(en){if(en.isIntersecting){en.target.classList.add('vis');obs.unobserve(en.target)}})},{threshold:.08});
+  document.querySelectorAll('.rv').forEach(function(el){obs.observe(el)});
+
+  /* FAQ toggle */
+  document.querySelectorAll('.faq-q').forEach(function(q){
+    q.addEventListener('click',function(){
+      this.closest('.faq-item').classList.toggle('open');
+    });
+  });
+});
+
+/* Form submit (Formspree fallback) */
+function handleSubmit(e){
+  e.preventDefault();
+  var b=e.target.querySelector('.fbtn');
+  b.textContent="Sent — we'll be in touch shortly.";
+  b.style.background='#D14836';
+  b.disabled=true;
+  setTimeout(function(){b.textContent='Send Quote Request';b.style.background='';b.disabled=false;e.target.reset()},4000);
+}
+
+</script>
 </body>
 </html>
